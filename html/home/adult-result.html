@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>신한메디칼</title>
+    <link rel="stylesheet" href="/resource/css/style.css" />
+    <script type="module" src="/resource/js/global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+        <!-- side left gnb :: s -->
+        <aside class="side-bar">
+            <h1 class="logo">
+                <i class="ic-logo"></i><span class="a11y">vyntus feno</span>
+            </h1>
+            <nav class="left-gnb">
+              <ul>
+                <li>
+                  <a href="#_" class="is-active"><i class="ic-home ic-size32"></i>홈</a>
+                </li>
+                <li>
+                  <a href="#_"><i class="ic-demo ic-size32"></i>데모</a>
+                </li>
+                <li>
+                  <a href="#_"><i class="ic-data ic-size32"></i>환자 데이터</a>
+                </li>
+              </ul>
+            </nav>
+            <!-- side left gnb :: e -->
+        </aside>
+        <div class="container">
+          <header class="header"><!-- Include --></header>
+        <!-- main :: s -->
+        <main class="contents">
+            <div class="contents__inner h-auto">
+          <!-- content top (title, button) :: s -->
+          <section class="contents__top contents__header">
+            <div class="contents__header-title">Patient Report</div>
+            <div class="btn-wrap__type2">
+              <a class="btn btn-white" href="#_" download="" role="button">Download<i class="ic-download ic-size24"></i></a>
+              <button type="button" class="btn btn-bg2" href="#_">
+                새로고침<i class="ic-retry ic-size24 bg-default-white"></i>
+              </button>
+            </div>
+          </section>
+          <!-- content top (title, button) :: e -->
+          <!-- content bottom (환자정보, 검사결과) :: s -->
+          <section class="contents__body">
+            <!-- 환자정보 :: s -->
+            <div class="contents__body--left">
+              <div class="result-card div-border-line">
+                <div class="result-card__header">
+                  <h3 class="result-card__title title5"><span class="dot"></span>Patient</h3>
+                </div>
+                <div class="result-card__body">
+                  <div class="result-card__avatar">
+                    <div class="ic-bg__gray">
+                      <i class="ic-adult"></i>
+                    </div>
+                  </div>
+                  <div class="result-card__info">
+                    <p class="result-card__name">홍길동</p>
+                    <span class="result-card__value">ABCD123</span>
+                  </div>
+                </div>
+                <div class="result-card__list">
+                  <div class="info-item">
+                    <p class="info-item__label">Birth</p>
+                    <span class="info-item__value">1983-11-14</span>
+                  </div>
+                  <div class="info-item">
+                    <p class="info-item__label">Age</p>
+                    <span class="info-item__value">42</span>
+                  </div>
+                  <div class="info-item">
+                    <p class="info-item__label">Gender</p>
+                    <span class="info-item__value">Male</span>
+                  </div>
+                  <div class="info-item">
+                    <p class="info-item__label">Physician</p>
+                    <span class="info-item__value">김의사</span>
+                  </div>
+                </div>
+              </div>
+              <div class="result-card div-bg2">
+                <div class="result-card__header">
+                  <div class="result-card__header--lastest">
+                    <h3 class="result-card__title title5"><span class="dot"></span>Lastest FeNO</h3>
+                    <span class="result-card__date">(2025-12-15)</span>
+                  </div>
+                </div>
+                <div class="result-card__body--lastest">
+                  <!-- <div class="result-card__"> -->
+                  <div class="lastest__value">
+                    <p class="lastest__value-num">16 <span class="lastest__value-ppb">ppb</span></p>
+                  </div>
+                  <!-- </div> -->
+                </div>
+              </div>
+            </div>
+            <!-- 환자정보 :: e -->
+            <!-- 검사 결과 table :: s -->
+            <div class="contents__body--right">
+              <div class="table-wrap div-border-line">
+                <p class="table__title title5"><span class="dot"></span>FeNo Average Trend</p>
+                <div class="chart_wrap">
+                  <canvas id="customLineChart"></canvas>
+                </div>
+              </div>
+              <div class="table-wrap div-border-line">
+                <p class="table__title title5"><span class="dot"></span>과거 검사 이력</p>
+                <div class="table-box">
+                  <table>
+                    <caption class="a11y">
+                      과거 검사 이력
+                    </caption>
+                    <colgroup>
+                      <col width="20%" />
+                      <col width="" />
+                      <col width="" />
+                      <col width="" />
+                      <col width="" />
+                      <col width="" />
+                      <col width="30%" />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">Time</th>
+                        <th scope="col">Mode</th>
+                        <th scope="col">NO Value <br />(ppb)</th>
+                        <th scope="col">Average <br />(ppb)</th>
+                        <th scope="col">Technician</th>
+                        <th scope="col">Comment</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>2025-11-07</td>
+                        <td>11:02</td>
+                        <td>10s</td>
+                        <td class="color-point fw-600">16</td>
+                        <td rowspan="2" class="color-point fw-600">15.5</td>
+                        <td>박임병</td>
+                        <td class="scroll-td">
+                          <div class="scroll-container">
+                            <span class="scroll-text">이 텍스트는 아주 길어서 마우스를 올리면 왼쪽으로 스르륵 흐르게 됩니다. 이 텍스트는 아주 길어서 마우스를 올리면 왼쪽으로 스르륵 흐르게 됩니다. 이 텍스트는 아주 길어서 마우스를 올리면 왼쪽으로 스르륵 흐르게 됩니다. 이 텍스트는 아주 길어서 마우스를 올리면 왼쪽으로 스르륵 흐르게 됩니다.</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>11:04</td>
+                        <td>10s</td>
+                        <td class="color-point fw-600">15</td>
+                        <td>박임병</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>2025-09-06</td>
+                        <td>14:22</td>
+                        <td>10s</td>
+                        <td class="color-point fw-600">24</td>
+                        <td rowspan="2" class="color-point fw-600">24.5</td>
+                        <td>정임병</td>
+                        <td>Cough</td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>14:25</td>
+                        <td>10s</td>
+                        <td class="color-point fw-600">24</td>
+                        <td>정임병</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>2025-06-07</td>
+                        <td>11:04</td>
+                        <td>10s</td>
+                        <td class="color-red-50 fw-600">24</td>
+                        <td class="color-red-50 fw-600">16</td>
+                        <td>박임병</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>2025-03-06</td>
+                        <td>14:20</td>
+                        <td>10s</td>
+                        <td class="color-point fw-600">48</td>
+                        <td rowspan="3" class="color-point fw-600">46</td>
+                        <td>정임병</td>
+                        <td>30분 전 식사</td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>14:22</td>
+                        <td>10s</td>
+                        <td class="color-point fw-600">48</td>
+                        <td>정임병</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>14:25</td>
+                        <td>10s</td>
+                        <td class="color-point fw-600">48</td>
+                        <td>정임병</td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!--  -->
+              <div class="table-wrap div-border-line">
+                <p class="table__title title5"><span class="dot"></span>판독 참고치</p>
+                <div class="table-box">
+                  <table>
+                    <caption class="a11y">
+                      판독 참고치
+                    </caption>
+                    <colgroup>
+                      <col width="25%" />
+                      <col width="25%" />
+                      <col width="25%" />
+                      <col width="25%" />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">Time</th>
+                        <th scope="col">Mode</th>
+                        <th scope="col">Comment</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>성인</td>
+                        <td class="color-point fw-600">< 25</td>
+                        <td>25 - 50</td>
+                        <td class="color-red-50 fw-600">> 50</td>
+                      </tr>
+                      <tr>
+                        <td>소아</td>
+                        <td class="color-point fw-600">< 20</td>
+                        <td>25 - 35</td>
+                        <td class="color-red-50 fw-600">> 35</td>
+                      </tr>
+                      <tr>
+                        <td>Th2-driven inflammation</td>
+                        <td class="color-point fw-600">Unlikely</td>
+                        <td>likely</td>
+                        <td class="color-red-50 fw-600">Significant</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!-- table 검사 결과 :: e -->
+          </section>
+          <!-- content bottom (환자정보, 검사결과) :: e -->
+
+          <!-- 하단 button :: s -->
+            <div class="btn-wrap__type3">
+                <a class="btn-bak btn-white sm" href="#_" download=""><i class="ic-download ic-size24"></i></a>
+                <button class="btn-bak btn-navy sm" type="button"><i class="ic-retry ic-size24"></i></button>
+            </div>
+           </div>
+          <!-- 하단 button :: e -->
+        </main>
+        <!-- main :: e -->
+      </div>
+    </div>
+  </body>
+</html>

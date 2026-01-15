@@ -1,0 +1,62 @@
+@charset "UTF-8";
+/* @import url("fonts.css"); */
+/* @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"); */
+/* @import url("reset.css"); */
+/* @import url("common.css"); */
+/* @import url("icon.css"); */
+@import url("style.css");
+
+/* guide */
+body {background-color: var(--default-white);}
+.guide-wrap {margin: 0 auto 4rem auto; max-width: 1600px; padding: 0 20px;}
+
+.module {position: relative; padding-bottom: 5%;}
+.page-title {padding-bottom: 50px; font-size: 70px;}
+.module__heading {padding-bottom: 2px; margin-bottom: 38px; font-size: 40px; border-bottom: 3px solid #121212; line-height: 1.5;}
+.module__subheading {margin: 25.6px 0 12.8px; font-size: 30px;}
+.table th, .table td {padding: 20px 8px; border: 1px solid var(--neutral-200);}
+.table th {font-size: 16px; background-color: var(--neutral-50);}
+.typo-h {font-size: 21px;}
+.typo-p {font-size: 19px;}
+
+.row {display: grid; gap: 25px; grid-template-columns: repeat(6, 1fr);}
+.module-color {
+    .color-item {display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; overflow: hidden;}
+    .color-h {padding: 10px 20px 5px; margin-bottom: 0; color: #121212; font-size: 13px; font-weight: 700;}
+    .color {padding: 40px 20px; width: 100%; overflow: hidden; border-radius: 4px;}
+    .color-key {display: block; padding: 4px; margin: 0; font-size: 16px; font-weight: 400;}
+    .color-value {display: block; padding: 4px; margin: 0; margin-left: auto; font-family: "Courier New", Courier, monospace; text-transform: uppercase; font-size: 16px; justify-self: flex-end;}
+}
+.module .col-lg-3, .module .col-lg-4, .module .col-lg-6, .module .col-lg-9, .module .col-lg-12 {
+    margin-bottom: 0.625rem;
+}
+.col-lg-3{grid-column: span 2;}
+
+.coding-map table {width: 100%; margin-top: 20px; margin-bottom: 50px;}
+.coding-map th, .coding-map td {padding: 10px;}
+.coding-map th {color: #ffffff; background-color: #121212;}
+.coding-map td {border-bottom: 1px solid #eaeaea;
+    + td {border-left: 1px solid #eaeaea;}
+}
+.coding-map tr.depth {background-color: var(--neutral-100);}
+.coding-map table a {color: #002d96; text-decoration: underline;}
+.module__h {margin: 20px 0; font-size: 21px; font-weight: 500;
+    &::before {content: "⚡️";}
+}
+small {font-size: 80%;}
+
+.btn {font-size: 18px;}
+.btn-list {
+    button + button {margin-top: 8px;}
+}
+
+.person-type {display: flex; gap: 1.375rem;}
+
+.module-icon ul {display: -webkit-box; display: flex; flex-wrap: wrap; gap: 4px;
+    li {padding: 1rem; width: 10%; text-align: center;
+        &:hover {cursor: pointer; background: var(--neutral-100); -webkit-box-shadow: 0 0 0 1px #b8b8b8 inset;box-shadow: 0 0 0 1px #b8b8b8 inset;}
+    }
+}
+.module-icon span {display: inline-block; padding-top: 8px; vertical-align: middle;}
+
+.checkbox, .radio {position: relative; display: -webkit-inline-box; display: -ms-inline-flexbox; display: inline-flex; margin-right: 1.5rem; white-space: normal; -webkit-box-sizing: border-box; box-sizing: border-box; word-break: keep-all; word-wrap: break-word;}

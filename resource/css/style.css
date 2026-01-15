@@ -1,0 +1,207 @@
+@charset "UTF-8";
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+/* @import url("fonts.css"); */
+@import url("reset.css");
+@import url("common.css");
+@import url("icon.css");
+
+body, html {font-size: clamp(14px, 0.833vw, 30px);}
+body {background-color: var(--bg1);}
+.wrap {position: relative; display: flex; height: 100vh; overflow: hidden;}
+
+/********************************* header *********************************/
+.header {flex-shrink: 0; display: flex; height: var(--side-height); min-height: var(--side-height); z-index: 100; background-color: var(--default-white); border-bottom: 1px solid var(--default-black);
+    /* &.main-header {display: flex;} */
+    .header-inner {flex: 1; display: flex; align-items: center; justify-content: space-between; padding: .625rem 1.5rem; width: 100%;}
+    .datetime-wrapper {display: flex; align-items: center; gap: 1rem;}
+    .datetime-wrapper {
+        .date-display, .time-stamp {font-size: 0.875rem; font-weight: 700;}
+        .time-stamp {margin-left: 4px;}
+    }
+    .user {position: relative;
+        .user__btn {padding: .375rem; background-color: var(--point); border-radius: 50%;}
+        .ic-id {background-color: var(--default-white); border-radius: 50%;}
+        .user-info {position: fixed; top: 3.375rem; right: 1.5rem; padding: 1rem; display: none; min-width: 11rem; background-color: var(--default-white); border: 1px solid var(--default-black); border-radius: 8px;
+            &.is-active {display: block;}
+            .user-info__profile {border-bottom: 1px solid var(--neutral-300); text-align: center;
+                div {display: inline-block; padding: .5rem; background-color: var(--point); border-radius: 50%;}
+                p {margin: .75rem 0;}
+            }
+            .user-info__logout {display: block; margin-top: .75rem; text-align: center;
+                span {display: flex; align-items: center; justify-content: center; gap: .25rem; color: var(--neutral-700);}
+            }
+        }
+    }
+}
+
+/********************************* side bar *********************************/
+/* login bar */
+img {max-width: 100%;}
+.login-side {position: relative; width: 31.125rem; display: flex;
+    flex-direction: column; flex-shrink: 0; padding: 7.5rem 1.5rem 4.9375rem 1.5rem; border-right: 1px solid var(--default-black); background-color: #F7F7F7; overflow: hidden;
+    .login-side__header {position: absolute; top: 7.5rem; left: 50%; transform: translateX(-50%); width: calc(100% - 3rem);
+        .login-side__header-title {margin-bottom: 1.5rem;}
+    }
+}
+.login-side__img {/*position: absolute; left: -5rem; bottom: 22.1875rem; top: 22.1875rem;*/ /*margin-left: -6.25rem; margin-top: 12.5625rem;*/ width: 200%; /*top: 29.75rem; min-width: 60.5625rem;*/} 
+.contents.contents__login {
+    .login__inner {
+        /* display: flex; align-items: center; justify-content: center; padding: 3.5rem; height: 100%; background-color: var(--default-white); */
+    flex: 1;
+    display: flex;
+    align-items: center;    /* 수직 중앙 정렬 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    padding: 3.5rem;
+    min-height: 37.5rem;      /* ★중요: 로그인 폼이 찌그러지지 않을 최소 높이 설정 */
+    background-color: var(--default-white);
+    }
+}
+.contents__login {flex: 1;
+    overflow-y: auto; /* 내용이 많아지면 여기서만 스크롤 */
+    display: flex;
+    flex-direction: column;
+    .login {padding: 0; width: 100%;
+    display: flex;
+    justify-content: center;}
+    .login-input-wrap {min-width: 32.375rem; padding: 0;}
+    .page-link {text-decoration-line: underline;}
+}
+
+/* left-gnb */
+.side-bar {display: flex; flex-direction: column; width: var(--side-width); flex-shrink: 0; border-right: 1px solid var(--default-black); background-color: var(--default-white);
+    .logo {display: flex; align-items: center; justify-content: center; width: var(--side-width); min-width: var(--side-width); height: var(--side-height); min-height: var(--side-height); background-color: var(--bg2); text-align: center; border-right: 1px solid var(--default-black);}
+    .ic-logo {display: block; width: 10.625rem; height: 1.4375rem; background-color: var(--default-white);}
+    .left-gnb {flex: 1; overflow-y: auto;
+        li {border-bottom: 1px solid var(--neutral-300);}
+        a {display: flex; align-items: center; gap: 1rem; padding: 1rem 1.5rem; font-size: var(--font-body3-size); color: var(--neutral-900);
+        &.is-active {color: var(--point);
+            i {background-color: var(--point);}
+        }
+    }
+    }
+}
+
+/********************************* 우측 컨텐츠 영역 *********************************/
+.container {display: flex; flex: 1; flex-direction: column; height: 100vh; overflow: hidden;}
+.contents {flex: 1;  overflow-y: auto; /* 컨텐츠 길어지면 내부 스크롤 */
+    .contents__inner {position: relative; padding: 2.5625rem 2.5rem; height: 100%; background-color: var(--bg1);}
+    .contents__header {display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;
+        .contents__header-title {font-size: var(--font-title4-size); font-weight: 600; line-height: 1.5; color: var(--neutral-900);}
+    }
+    .contents__body {display: flex; justify-content: space-between; gap: 1.5rem;
+        .contents__body--left {flex: 0; /*flex: 0 0 auto;*/ min-width: 20rem;}
+        .contents__body--right {flex: 1;}
+    }
+}
+
+
+/********************************* login *********************************/
+.login {flex: 1; display: flex; align-items: center; justify-content: center; padding: 2rem;}
+.login__main {
+    .login__inner {background-color: var(--default-white);}
+}
+.login-input-wrap {padding: 5rem; background-color: var(--default-white); border-radius: 16px;
+    .login-input-box + .login-input-box {margin-top: 1.5rem;}
+}
+.login__title {margin-bottom: 4rem;}
+.form-label {display: inline-block; padding-bottom: .5rem; font-size: var(--font-body4-size); line-height: 1.5; color: var(--neutral-700);}
+.login-input-btn-group {margin: 4rem 0;}
+
+/* rock */
+.rock-wrap {height: 100%;}
+.login-rock {display: flex; flex-direction: column;  align-items: center;  
+    .login-rock__img {display: block;
+            margin: 0 auto;
+            width: 12.5625rem;
+            height: 10.125rem;
+            background: url('/resource/images/common/rock-img.svg') no-repeat center / contain;}  
+    /* .rock-img {display: block; margin: 0 auto; width: 12.5625rem; height: 10.125rem;} */
+    .login-rock__desc {margin: 3rem 0; text-align: center;}
+    .btn {display: inline-flex; align-items: center; justify-content: center; width: auto; min-width: 12.5rem;}
+}
+
+/* home - 환자 데이터 입력 (Enter Patient Data) */
+.enter-patient-wrap {min-width: 47.5rem;}
+
+
+/*********************************  *********************************/
+.info-card, .result-card, .table-wrap {
+    display: flex; flex-direction: column; border-radius: 8px;
+    .info-card__title, .result-card__title, .table__title {display: flex; align-items: center; gap: .5rem; /*margin-bottom: 1.5rem;*/}
+    }
+.info-card + .info-card, .result-card + .result-card {margin-top: 1.5rem;}
+.contents__body--left {flex: 0 0 auto; min-width: 20rem;
+    .info-card {padding: 1.5rem 2rem;
+        .info-item {
+            + .info-item {margin-top: 1rem;}
+            .info-item__label {font-size: var(--font-title6-size); font-weight: 700; line-height: 1.5; color: var(--neutral-700);}
+            .info-item__value {font-size: var(--font-body1-size); font-weight: 700; line-height: 1.5;}
+        }
+    }
+    .result-card {padding: 2.5rem;
+        .result-card__body {display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem;}
+        .result-card__info {
+            .result-card__name, .result-card__value {font-weight: 700; line-height: 1.5;} 
+            .result-card__name {margin-bottom: .5rem; font-size: var(--font-body2-size);}
+            .result-card__value {font-size: var(--font-body3-size);}
+        }
+        .result-card__list {
+            .info-item {display: flex; gap: .5rem;
+                + .info-item {margin-top: 1rem;}
+                .info-item__label, .info-item__value {font-weight: 600; line-height: 1.5;} 
+                .info-item__label {min-width: 6rem; font-size: var(--font-title6-size); color: var(--neutral-700);}
+                .info-item__value {font-size: var(--font-body3-size);}
+            }
+        }
+        .result-card__header--lastest {display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem;
+            .result-card__title {color: var(--default-white);
+                .dot {background-color: var(--neutral-300);}
+            }
+        }
+        .result-card__date {font-size: var(--font-body5-size); color: var(--neutral-300); line-height: 1.5;}
+        .result-card__body--lastest {display: flex; align-items: center; padding: .625rem 1.5rem; background-color: rgba(247, 247, 247, 0.08); border-radius: 8px;
+            .lastest__value {
+                .lastest__value-num, .lastest__value-ppb {line-height: 1.5;}
+                .lastest__value-num {font-size: var(--font-title4-size); color: var(--default-white); font-weight: 600;}
+                .lastest__value-ppb {font-size: var(--font-body3-size); color: var(--neutral-300); font-weight: 500;}
+            }
+        }
+    }
+}
+.table__title {margin-bottom: 2rem;}
+
+/********************************* 검사 home  *********************************/
+/* 성인, 소아 선택 */
+.select-person {display: grid; grid-template-columns: repeat(2, 1fr); height: 100%;
+    a:first-child {border-right: 1px solid var(--default-black);}
+    a, .person-icon, .select-person__title, .ic-arrow {transition: all 0.5s ease-in-out;}
+    a {position: relative; padding: 5rem; overflow: hidden;
+        .person-icon {position: absolute; bottom: -5rem; right: 2.5rem; width: 25rem; height: 37.5rem; 
+            &.adult {background: url(/resource/images/common/adult.svg) no-repeat center center / cover;}
+            &.children {background: url(/resource/images/common/children.svg) no-repeat center center / cover;}
+        }
+        .select-person__title {display: flex; align-items: center; justify-content: space-between; 
+            .ic-arrow {margin-right: 1.875rem; background-color: var(--bg1);}
+        }
+        &.is-active {background-color: var(--bg3);}
+        &.is-active .select-person__title {color: var(--default-white);
+            .ic-arrow {margin-right: 0; background-color: var(--default-white);}
+        }
+        &.is-active .person-icon {bottom: 2.5rem;
+            &.adult {background: url(/resource/images/common/adult_is-active.svg) no-repeat center center / cover;}
+            &.children {background: url(/resource/images/common/children_is-active.svg) no-repeat center center / cover;}
+        }
+    }
+}
+/* 재실행 */
+/* 팝업 */
+/* 측정대기 */
+.timer-sec {width: 15rem; height: 15rem; background-color: var(--default-white); border: 1.5rem solid var(--point); border-radius: 50%; box-shadow: 2.5px 2.5px 8px 0 rgba(0, 0, 0, 0.12);}
+
+/********************************* 환자 데이터  *********************************/
+/* 데이터 리스트 data list */
+.data-list__total {margin-bottom: 1rem; color: var(--neutral-700);}
+.total-num {color: var(--bg2);}
+
+
+.chart_wrap {width: 100%; height: 400px;}
