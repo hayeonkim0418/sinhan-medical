@@ -318,7 +318,7 @@ input[type=date].date {
             .ic-info {background-color: var(--point);}
         }
         &.red {background-color: var(--red-50);
-            .ic-warn {background-color: var(--default-white);}
+            .ic-info {background-color: var(--default-white);}
         }
     }
     .num {color: var(--neutral-500);}
