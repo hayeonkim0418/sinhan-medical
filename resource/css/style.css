@@ -39,30 +39,16 @@ body {background-color: var(--bg1);}
 img {max-width: 100%;}
 .login-side {position: relative; width: 31.125rem; display: flex;
     flex-direction: column; flex-shrink: 0; padding: 7.5rem 1.5rem 4.9375rem 1.5rem; border-right: 1px solid var(--default-black); background-color: #F7F7F7; overflow: hidden;
-    .login-side__header {position: absolute; top: 7.5rem; left: 50%; transform: translateX(-50%); width: calc(100% - 3rem);
+    .login-side__header {position: absolute; top: 7.5rem; left: 50%; transform: translateX(-50%); width: calc(100% - 3rem); height: 100%;
         .login-side__header-title {margin-bottom: 1.5rem;}
     }
 }
-.login-side__img {/*position: absolute; left: -5rem; bottom: 22.1875rem; top: 22.1875rem;*/ /*margin-left: -6.25rem; margin-top: 12.5625rem;*/ width: 200%; /*top: 29.75rem; min-width: 60.5625rem;*/} 
+.login-side__img {position: absolute; bottom: 10rem; left: 50%; transform: translateX(-50%); width: 24.375rem;} 
 .contents.contents__login {
-    .login__inner {
-        /* display: flex; align-items: center; justify-content: center; padding: 3.5rem; height: 100%; background-color: var(--default-white); */
-    flex: 1;
-    display: flex;
-    align-items: center;    /* 수직 중앙 정렬 */
-    justify-content: center; /* 수평 중앙 정렬 */
-    padding: 3.5rem;
-    min-height: 37.5rem;      /* ★중요: 로그인 폼이 찌그러지지 않을 최소 높이 설정 */
-    background-color: var(--default-white);
-    }
+    .login__inner {flex: 1; display: flex; align-items: center; justify-content: center; padding: 3.5rem; min-height: 37.5rem; /* ★중요: 로그인 폼이 찌그러지지 않을 최소 높이 설정 */ background-color: var(--default-white);}
 }
-.contents__login {flex: 1;
-    overflow-y: auto; /* 내용이 많아지면 여기서만 스크롤 */
-    display: flex;
-    flex-direction: column;
-    .login {padding: 0; width: 100%;
-    display: flex;
-    justify-content: center;}
+.contents__login {flex: 1; display: flex; flex-direction: column; overflow-y: auto; 
+    .login {display: flex; justify-content: center; padding: 0; width: 100%;}
     .login-input-wrap {min-width: 32.375rem; padding: 0;}
     .page-link {text-decoration-line: underline;}
 }
@@ -80,20 +66,6 @@ img {max-width: 100%;}
     }
     }
 }
-
-/********************************* 우측 컨텐츠 영역 *********************************/
-.container {display: flex; flex: 1; flex-direction: column; height: 100vh; overflow: hidden;}
-.contents {flex: 1;  overflow-y: auto; /* 컨텐츠 길어지면 내부 스크롤 */
-    .contents__inner {position: relative; padding: 2.5625rem 2.5rem; height: 100%; background-color: var(--bg1);}
-    .contents__header {display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;
-        .contents__header-title {font-size: var(--font-title4-size); font-weight: 600; line-height: 1.5; color: var(--neutral-900);}
-    }
-    .contents__body {display: flex; justify-content: space-between; gap: 1.5rem;
-        .contents__body--left {flex: 0; /*flex: 0 0 auto;*/ min-width: 20rem;}
-        .contents__body--right {position: relative; flex: 1;}
-    }
-}
-
 
 /********************************* login *********************************/
 .login {flex: 1; display: flex; align-items: center; justify-content: center; padding: 2rem;}
@@ -120,8 +92,20 @@ img {max-width: 100%;}
     .btn {display: inline-flex; align-items: center; justify-content: center; width: auto; min-width: 12.5rem;}
 }
 
-/* home - 환자 데이터 입력 (Enter Patient Data) */
-.enter-patient-wrap {min-width: 47.5rem;}
+/********************************* 우측 컨텐츠 영역 *********************************/
+.container {display: flex; flex: 1; flex-direction: column; height: 100vh; overflow: hidden;}
+.contents {flex: 1;  overflow-y: auto; /* 컨텐츠 길어지면 내부 스크롤 */
+    .contents__inner {position: relative; padding: 2.5625rem 2.5rem; height: 100%; background-color: var(--bg1);}
+    .contents__header {display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;
+        .contents__header-title {font-size: var(--font-title4-size); font-weight: 600; line-height: 1.5; color: var(--neutral-900);}
+    }
+    .contents__body {display: flex; justify-content: space-between; gap: 1.5rem; height: 100%;
+        .contents__body--left {flex: 0; /*flex: 0 0 auto;*/ min-width: 20rem;}
+        .contents__body--right {position: relative; flex: 1;}
+    }
+}
+
+
 
 
 /*********************************  *********************************/
@@ -179,6 +163,9 @@ img {max-width: 100%;}
 .table__title {margin-bottom: 2rem;}
 
 /********************************* 01 home 홈  *********************************/
+/* home - 환자 데이터 입력 (Enter Patient Data) */
+.enter-patient-wrap {min-width: 47.5rem;}
+
 /* 성인, 소아 선택 */
 .select-person {display: grid; grid-template-columns: repeat(2, 1fr); height: 100%;
     a:first-child {border-right: 1px solid var(--default-black);}
@@ -204,16 +191,41 @@ img {max-width: 100%;}
 /* 재실행 */
 /* 팝업 */
 /* 측정대기 */
-.ball-test__content {position: relative; display: grid; grid-template-columns: repeat(3, 1fr); justify-items: center; width: calc(100% - 15rem); height: 100%; background-color: thistle;
-    &::before {position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); display: block; width: 17.375rem; height: 5rem; content: ""; background: url(../../resource/images/common/pipe.svg) no-repeat center / cover;}
+.measurement-section {display: block; /*align-items: center; flex-direction: column; justify-content: center;*/ margin-top: 4.8125rem; /*height: calc(100vh - 6rem);*/}
+.measurement-inner {display: inline-flex; flex-direction: column; align-items: center;}
+.instruction-bubble {position: absolute; bottom: calc(100% + 2rem); left: 50%; transform: translateX(-50%); padding: 1.25rem 2rem; white-space: nowrap; background-color: var(--default-white); border-radius: 16px;
+ border: 1px solid #000; z-index: 10; font-size: var(--font-body1-size); line-height: 1.5; font-weight: 700;
+    &::after {content: ''; position: absolute; bottom: -1.0625rem; left: 50%; transform: translateX(-50%) rotate(45deg); width: 2rem; height: 2rem; background: var(--default-white); border-bottom-right-radius: 6px; border-right: 1px solid #000; border-bottom: 1px solid #000; z-index: -1;}
+    span {color: var(--point);}
 }
-.start-btn {width: 11.25rem; height: 11.25rem; background: url(../../resource/images/common/btn-start.svg) no-repeat center/cover;}
+/* 중앙 측정 게이지 레이아웃 */
+.gauge-container {position: relative; display: inline-flex; align-items: center; gap: 10rem; height: 45.375rem;}
+.lines-column {display: flex; flex-direction: column; justify-content: space-between; height: 100%;
+    .line-blue-box {display: flex; flex-direction: column; gap: 6.25rem;}
+    .line {width: 9.125rem; height: .375rem; background-color: var(--neutral-500);
+        &.blue {background-color: var(--point);}
+    }
+}
+/* 공 움직임 설정 */
+.ball-path {position: relative; width: 10rem; height: 100%;}
+.ball {position: absolute; top: 45%; left: 50%; transform: translate(-50%, -50%); transition: transform 0.1s ease-out; width: 10rem; height: auto; text-align: center;}
+.btm-box {display: inline-flex; align-items: center; flex-direction: column; gap: 2.5rem;}
+.btn-start {width: 11.25rem; height: 11.25rem; background: url(../../resource/images/common/btn-start.svg) no-repeat center/cover; transition: all 0.2s ease-in-out;
+    &:hover {background: url(../../resource/images/common/btn-start_hover.svg) no-repeat center/cover;}
+}
+
 /* 소아 */
-.balloon-test__content {display: flex; align-items: center; flex-direction: column; gap: 5.25rem; width: calc(100% - 15rem);}
+.measurement-section__balloon {
+    .measurement-inner {display: flex;}
+    .gauge-container {height: 22.5rem; background: url(../../resource/images/common/balloon-blue_bg.svg) no-repeat center/cover;}
+} 
+.balloon-path {width: 22.5rem;}
+.balloon {top: 63%;}
+/* .balloon-test__content {display: flex; align-items: center; flex-direction: column; gap: 5.25rem; width: calc(100% - 15rem);}
 .balloon__bg.wait {display: flex; align-items: center; justify-content: center; width: 22.5rem; height: 22.5rem; background: url(../../resource/images/common/balloon-blue_bg.svg) no-repeat center / cover;
     img {margin-top: 5.25rem; width: 10rem;}
 }
-.balloon__bg {width: 35.375rem; height: 35.375rem; background: url(../../resource/images/common/balloon-blue_bg.svg) no-repeat center / cover;}
+.balloon__bg {width: 35.375rem; height: 35.375rem; background: url(../../resource/images/common/balloon-blue_bg.svg) no-repeat center / cover;} */
 
 /* 잔여시간 */
 .timer-sec {position: absolute; right: 0; top: 0; display: flex; align-items: center; justify-content: center; width: 15rem; height: 15rem; background-color: var(--default-white); border: 1.5rem solid var(--point); border-radius: 50%; box-shadow: 2.5px 2.5px 8px 0 rgba(0, 0, 0, 0.12);
