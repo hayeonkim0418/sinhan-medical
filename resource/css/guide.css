@@ -59,4 +59,5 @@ small {font-size: 80%;}
 }
 .module-icon span {display: inline-block; padding-top: 8px; vertical-align: middle;}
 
+.checkbox__label {justify-content: normal;}
 .checkbox, .radio {position: relative; display: -webkit-inline-box; display: -ms-inline-flexbox; display: inline-flex; margin-right: 1.5rem; white-space: normal; -webkit-box-sizing: border-box; box-sizing: border-box; word-break: keep-all; word-wrap: break-word;}

@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /* Reset */
-html,body,h1,h2,h3,h4,h5,h6,div,p,blockquote,pre,code,address,ul,ol,li,nav,section,article,header,footer,main,aside,dl,dt,dd,table,thead,tbody,tfoot,label,caption,th,td,form,fieldset,legend,hr,input,button,textarea,object,figure,figcaption {margin:0;padding:0; line-height: 1; box-sizing: border-box; letter-spacing: -0.03em; word-break: keep-all; color: var(--default-black); -webkit-text-size-adjust: none;
+html,body,h1,h2,h3,h4,h5,h6,div,p,blockquote,pre,code,address,ul,ol,li,nav,section,article,header,footer,main,aside,dl,dt,dd,table,thead,tbody,tfoot,label,caption,th,td,form,fieldset,legend,hr,input,button,textarea,object,figure,figcaption {margin:0;padding:0; line-height: 1; box-sizing: border-box; word-break: keep-all; color: var(--default-black); -webkit-text-size-adjust: none;
 	/*세로모드에서 가로모드로 전환할때 텍스트가 약간 커지는 현상 방지*/}
 body,input,select,textarea,button,img,fieldset {border:none;}
 body, html{font-family: 'Pretendard', 'Poppins', 'Noto Sans KR', sans-serif, 'Nanum Gothic', 돋움, dotum, 굴림, gulim, Helvetica, AppleGothic;}

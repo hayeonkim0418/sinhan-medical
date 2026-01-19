@@ -17,13 +17,13 @@
             <nav class="left-gnb">
               <ul>
                 <li>
-                  <a href="#_" class="is-active"><i class="ic-home ic-size32"></i>홈</a>
+                  <a href="#_"><i class="ic-home ic-size32"></i>홈</a>
                 </li>
                 <li>
                   <a href="#_"><i class="ic-demo ic-size32"></i>데모</a>
                 </li>
                 <li>
-                  <a href="#_"><i class="ic-data ic-size32"></i>환자 데이터</a>
+                  <a href="#_" class="is-active"><i class="ic-data ic-size32"></i>환자 데이터</a>
                 </li>
               </ul>
             </nav>
@@ -42,7 +42,7 @@
                                     <p class="form-label">Patient ID <span class="sharp">*</span></p>
                                     <label for="t1" class="a11y">Patient ID</label>
                                     <div class="input-container">
-                                        <input type="text" id="t1" class="id" placeholder="placeholder">
+                                        <input type="text" id="t1" class="id" value="ABCD123">
                                     </div>
                                     <p class="login-input-box__desc noti login-noti body5-regular">
                                         Patient ID can be up to 40 characters in English + numeric combination
@@ -53,14 +53,14 @@
                                     <p class="form-label">First Name</p>
                                     <label for="t2" class="a11y">First Name</label>
                                     <div class="input-container">
-                                        <input type="text" id="t2" class="text-form" placeholder="First Name">
+                                        <input type="text" id="t2" class="text-form" value="길동">
                                     </div>
                                 </div>
                                 <div class="login-input-box">
                                     <p class="form-label">Last Name (Family Name)</p>
                                     <label for="t3" class="form-label">Last Name (Family Name)</label>
                                     <div class="input-container">
-                                        <input type="text" id="t3" class="text-form" placeholder="Last Name (Family Name)">
+                                        <input type="text" id="t3" class="text-form" value="홍">
                                     </div>
                                 </div>
 
@@ -73,10 +73,10 @@
                                 </div>
 
                                 <div class="login-input-box">
-                                    <p class="form-label">Gender</p>
+                                    <p class="form-label p-b-16">Gender</p>
                                         <div class="input-container">
                                             <span class="checkbox">
-                                                <input type="radio" class="radio__input" id="r1" name="radio">
+                                                <input type="radio" class="radio__input" id="r1" name="radio" checked>
                                                 <label for="r1" class="radio__label">
                                                     <span class="radio__text">Male</span>
                                                 </label>
@@ -94,7 +94,7 @@
                                     <p class="form-label">진료의</p>
                                     <label for="t3" class="a11y">진료의</label>
                                     <div class="input-container">
-                                        <input type="text" id="t3" class="text-form" placeholder="진료의">
+                                        <input type="text" id="t3" class="text-form" value="진료의">
                                     </div>
                                 </div>
                                 <div class="login-input-box">
@@ -107,7 +107,7 @@
                                             </div>
                                         </div>
                                         <ul class="option-list">
-                                            <li class="option">선택-1</li>
+                                            <li class="option">내과</li>
                                             <li class="option">선택-2</li>
                                             <li class="option">선택-3</li>
                                             <li class="option">선택-4</li>
@@ -118,20 +118,21 @@
                                     <p class="form-label">검사자</p>
                                     <label for="t4" class="a11y">검사자</label>
                                     <div class="input-container">
-                                        <input type="text" id="t4" class="text-form" placeholder="검사자">
+                                        <input type="text" id="t4" class="text-form" value="박임병">
                                     </div>
                                 </div>
                                 <div class="login-input-box">
                                     <p class="form-label">기타</p>
                                     <label for="t5" class="a11y">기타</label>
                                     <div class="input-container">
-                                        <textarea name="" id="t5" class="text-form" placeholder="코멘트를 입력하세요."></textarea>
+                                        <textarea name="" id="t5" class="text-form">30분전 식사</textarea>
                                         <!-- <input type="textar" id="t5" class="text-form" placeholder="코멘트를 입력하세요."> -->
                                     </div>
                                 </div>
 
-                                <div class="login-input-btn-group m-b-0">
-                                    <button type="submit" class="login-input-box__btn btn btn-bg2">Submit</button>
+                                <div class="btn-wrap login-input-btn-group m-b-0">
+                                    <button type="button" class="btn btn-white">Go back</button>
+                                    <button type="button" class="btn btn-bg2">Edit</button>
                                 </div>
                             </form>
                         </div>

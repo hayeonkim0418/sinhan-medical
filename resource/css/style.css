@@ -90,7 +90,7 @@ img {max-width: 100%;}
     }
     .contents__body {display: flex; justify-content: space-between; gap: 1.5rem;
         .contents__body--left {flex: 0; /*flex: 0 0 auto;*/ min-width: 20rem;}
-        .contents__body--right {flex: 1;}
+        .contents__body--right {position: relative; flex: 1;}
     }
 }
 
@@ -114,7 +114,7 @@ img {max-width: 100%;}
             margin: 0 auto;
             width: 12.5625rem;
             height: 10.125rem;
-            background: url('/resource/images/common/rock-img.svg') no-repeat center / contain;}  
+            background: url('../../resource/images/common/rock-img.svg') no-repeat center / contain;}  
     /* .rock-img {display: block; margin: 0 auto; width: 12.5625rem; height: 10.125rem;} */
     .login-rock__desc {margin: 3rem 0; text-align: center;}
     .btn {display: inline-flex; align-items: center; justify-content: center; width: auto; min-width: 12.5rem;}
@@ -125,13 +125,21 @@ img {max-width: 100%;}
 
 
 /*********************************  *********************************/
-.info-card, .result-card, .table-wrap {
-    display: flex; flex-direction: column; border-radius: 8px;
-    .info-card__title, .result-card__title, .table__title {display: flex; align-items: center; gap: .5rem; /*margin-bottom: 1.5rem;*/}
-    }
+/* 데모 - 환자 정보 */
+.dot {position: absolute; top: 50%; transform: translateY(-50%); left: 0; display: block; width: .375rem; height: .375rem; background-color: var(--point); border-radius: 50%;}
+.ic-bg__gray {display: inline-block; padding: .75rem 1.375rem; min-height: 5rem; background-color: var(--bg1); border-radius: 8px; text-align: center;}
+
+.info-card, .result-card, .table-wrap {display: flex; flex-direction: column; border-radius: 8px;
+    .info-card__title, .result-card__title, .table__title {position: relative; padding-left: .875rem; /*margin-bottom: 1.5rem; */}
+}
+.result-card__header, .info-card__header {margin-bottom: 1.5rem;}
+.info-card__header {display: flex; align-items: center; justify-content: space-between;
+    .ic-manager {background-color: var(--neutral-500);}
+}
 .info-card + .info-card, .result-card + .result-card {margin-top: 1.5rem;}
 .contents__body--left {flex: 0 0 auto; min-width: 20rem;
     .info-card {padding: 1.5rem 2rem;
+        .info-card__avatar {display: flex; gap: 1rem;}
         .info-item {
             + .info-item {margin-top: 1rem;}
             .info-item__label {font-size: var(--font-title6-size); font-weight: 700; line-height: 1.5; color: var(--neutral-700);}
@@ -153,7 +161,7 @@ img {max-width: 100%;}
                 .info-item__value {font-size: var(--font-body3-size);}
             }
         }
-        .result-card__header--lastest {display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem;
+        .result-card__header--lastest {display: flex; align-items: baseline; justify-content: space-between; /*margin-bottom: 1.5rem;*/
             .result-card__title {color: var(--default-white);
                 .dot {background-color: var(--neutral-300);}
             }
@@ -170,15 +178,15 @@ img {max-width: 100%;}
 }
 .table__title {margin-bottom: 2rem;}
 
-/********************************* 검사 home  *********************************/
+/********************************* 01 home 홈  *********************************/
 /* 성인, 소아 선택 */
 .select-person {display: grid; grid-template-columns: repeat(2, 1fr); height: 100%;
     a:first-child {border-right: 1px solid var(--default-black);}
     a, .person-icon, .select-person__title, .ic-arrow {transition: all 0.5s ease-in-out;}
     a {position: relative; padding: 5rem; overflow: hidden;
         .person-icon {position: absolute; bottom: -5rem; right: 2.5rem; width: 25rem; height: 37.5rem; 
-            &.adult {background: url(/resource/images/common/adult.svg) no-repeat center center / cover;}
-            &.children {background: url(/resource/images/common/children.svg) no-repeat center center / cover;}
+            &.adult {background: url(../../resource/images/common/adult.svg) no-repeat center center / cover;}
+            &.children {background: url(../../resource/images/common/children.svg) no-repeat center center / cover;}
         }
         .select-person__title {display: flex; align-items: center; justify-content: space-between; 
             .ic-arrow {margin-right: 1.875rem; background-color: var(--bg1);}
@@ -188,20 +196,72 @@ img {max-width: 100%;}
             .ic-arrow {margin-right: 0; background-color: var(--default-white);}
         }
         &.is-active .person-icon {bottom: 2.5rem;
-            &.adult {background: url(/resource/images/common/adult_is-active.svg) no-repeat center center / cover;}
-            &.children {background: url(/resource/images/common/children_is-active.svg) no-repeat center center / cover;}
+            &.adult {background: url(../../resource/images/common/adult_is-active.svg) no-repeat center center / cover;}
+            &.children {background: url(../../resource/images/common/children_is-active.svg) no-repeat center center / cover;}
         }
     }
 }
 /* 재실행 */
 /* 팝업 */
 /* 측정대기 */
-.timer-sec {width: 15rem; height: 15rem; background-color: var(--default-white); border: 1.5rem solid var(--point); border-radius: 50%; box-shadow: 2.5px 2.5px 8px 0 rgba(0, 0, 0, 0.12);}
+.ball-test__content {position: relative; display: grid; grid-template-columns: repeat(3, 1fr); justify-items: center; width: calc(100% - 15rem); height: 100%; background-color: thistle;
+    &::before {position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); display: block; width: 17.375rem; height: 5rem; content: ""; background: url(../../resource/images/common/pipe.svg) no-repeat center / cover;}
+}
+.start-btn {width: 11.25rem; height: 11.25rem; background: url(../../resource/images/common/btn-start.svg) no-repeat center/cover;}
+/* 소아 */
+.balloon-test__content {display: flex; align-items: center; flex-direction: column; gap: 5.25rem; width: calc(100% - 15rem);}
+.balloon__bg.wait {display: flex; align-items: center; justify-content: center; width: 22.5rem; height: 22.5rem; background: url(../../resource/images/common/balloon-blue_bg.svg) no-repeat center / cover;
+    img {margin-top: 5.25rem; width: 10rem;}
+}
+.balloon__bg {width: 35.375rem; height: 35.375rem; background: url(../../resource/images/common/balloon-blue_bg.svg) no-repeat center / cover;}
 
-/********************************* 환자 데이터  *********************************/
+/* 잔여시간 */
+.timer-sec {position: absolute; right: 0; top: 0; display: flex; align-items: center; justify-content: center; width: 15rem; height: 15rem; background-color: var(--default-white); border: 1.5rem solid var(--point); border-radius: 50%; box-shadow: 2.5px 2.5px 8px 0 rgba(0, 0, 0, 0.12);
+    .timer-sec__text {
+        p {color: var(--neutral-700);}
+        .timer-sec__num {padding-right: .25rem;}
+    }
+}
+/*  */
+.circle_progress_wrap {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+.circle_progress { transform: rotate(-90deg); }
+.frame, .bar { fill: none; }
+.frame { stroke: #e6e6e6; }
+.bar {
+  stroke: #03c75a;
+  stroke-linecap: round;
+}
+.value {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  text-align: center;
+  color: #888;
+  font-size: 16px;
+  line-height: 120px;
+}
+/*  */
+
+/********************************* 02 demo 데모 *********************************/
+.no-data {padding: 5.25rem 0;
+    .ic-data-edit {background-color: var(--neutral-400);}
+    p {padding-top: 8px; color: var(--neutral-400);}
+}
+
+/********************************* 03 환자 데이터  *********************************/
 /* 데이터 리스트 data list */
 .data-list__total {margin-bottom: 1rem; color: var(--neutral-700);}
 .total-num {color: var(--bg2);}
+.table-box__checkbox {
+    tbody tr:hover {background-color: var(--neutral-200);}
+    tbody tr:hover td:first-child, tbody tr:hover td:nth-child(2) {color: var(--point);}
+}
 
 
 .chart_wrap {width: 100%; height: 400px;}
