@@ -103,9 +103,11 @@
             <div class="contents__body--right">
               <div class="table-wrap div-border-line">
                 <p class="table__title title5"><span class="dot"></span>FeNo Average Trend</p>
+                <!-- chart :: s -->
                 <div class="chart_wrap">
-                  <canvas id="customLineChart"></canvas>
+                  <canvas id="customLineChartNoData"></canvas>
                 </div>
+                <!-- chart :: e -->
               </div>
               <div class="table-wrap div-border-line">
                 <p class="table__title title5"><span class="dot"></span>과거 검사 이력</p>
@@ -172,21 +174,21 @@
                     <tbody>
                       <tr>
                         <td>성인</td>
-                        <td class="color-point">< 25</td>
+                        <td class="color-point fw-400">< 25</td>
                         <td>25 - 50</td>
-                        <td class="color-red-50">> 50</td>
+                        <td class="color-red-50 fw-400">> 50</td>
                       </tr>
                       <tr>
                         <td>소아</td>
-                        <td class="color-point">< 20</td>
+                        <td class="color-point fw-400">< 20</td>
                         <td>25 - 35</td>
-                        <td class="color-red-50">> 35</td>
+                        <td class="color-red-50 fw-400">> 35</td>
                       </tr>
                       <tr>
                         <td>Th2-driven inflammation</td>
-                        <td class="color-point">Unlikely</td>
+                        <td class="color-point fw-400">Unlikely</td>
                         <td>likely</td>
-                        <td class="color-red-50">Significant</td>
+                        <td class="color-red-50 fw-400">Significant</td>
                       </tr>
                     </tbody>
                   </table>
