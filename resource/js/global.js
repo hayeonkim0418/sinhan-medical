@@ -9,7 +9,7 @@ import { initCustomChart } from "./initCustomChart.js";
 import { initCustomChartNoData } from "./initCustomChart_NoData.js";
 
 Header();
-ProgressBar();
+// ProgressBar();
 TableTextScroll();
 SelectEvent();
 SelectPerson();
