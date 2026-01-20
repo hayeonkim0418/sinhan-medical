@@ -298,6 +298,7 @@ input[type=date].date {
         tr {border-bottom: 1px solid var(--neutral-200);}
         td {font-size: var(--font-body3-size)}
         td.color-point, td.color-red-50 {font-weight: 600;}
+        td.fw-400, td.fw-400 {font-weight: 400;}
     } 
 } 
 /* 글씨 슬라이드 */
