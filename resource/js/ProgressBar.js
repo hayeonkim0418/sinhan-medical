@@ -7,7 +7,7 @@ export const ProgressBar = () => {
   const radius = 45;
   const circumference = 2 * Math.PI * radius; // 원의 둘레: 약 282.7
 
-  if (!seconds) return;
+  if (!secondsElement || !progressCircle) return;
 
   // 초기화
   progressCircle.style.strokeDasharray = circumference;
