@@ -34,121 +34,113 @@
             <!-- main :: s -->
             <main class="contents">
                 <div class="contents__inner h-100vh">
-                <div class="contents__body gap-90">
-                    <!-- 환자정보 :: s -->
-                    <div class="contents__body--left">
-                        <div class="info-card div-border-line">
-                            <div class="info-card__header">
-                                <h3 class="info-card__title title5">
-                                    <span class="dot"></span>Patient
-                                </h3>
-                            </div>
-                            <div class="info-card__body">
-                                <div class="info-card__avatar">
-                                    <img src="../../resource/images/icon/ic-patient-adult_on.svg">
+                    <div class="contents__body gap-90">
+                        <!-- 환자정보 :: s -->
+                        <div class="contents__body--left">
+                            <div class="info-card div-border-line">
+                                <div class="info-card__header">
+                                    <h3 class="info-card__title title5">
+                                        <span class="dot"></span>Patient
+                                    </h3>
+                                </div>
+                                <div class="info-card__body">
+                                    <div class="info-card__avatar">
+                                        <img src="../../resource/images/icon/ic-patient-adult_on.svg">
+                                    </div>
+                                </div>
+                                <div class="info-card__list m-t-20">
+                                    <div class="info-item">
+                                        <p class="info-item__label">Patient ID</p>
+                                        <span class="info-item__value">ABCD123</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <p class="info-item__label">Date of Birth</p>
+                                        <span class="info-item__value">2024-06-10</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="info-card__list m-t-20">
-                                <div class="info-item">
-                                    <p class="info-item__label">Patient ID</p>
-                                    <span class="info-item__value">ABCD123</span>
+                            <div class="info-card div-border-line">
+                                <div class="info-card__header">
+                                    <h3 class="info-card__title title5">
+                                        <span class="dot"></span>Language
+                                    </h3>
                                 </div>
-                                <div class="info-item">
-                                    <p class="info-item__label">Date of Birth</p>
-                                    <span class="info-item__value">2024-06-10</span>
+                                <div class="info-card__list">
+                                    <div class="info-item">
+                                        <div class="select-box">
+                                            <div class="selected">
+                                                <div class="selected__value">선택해주세요</div>
+                                                <div class="arrow-dropdow">
+                                                    <i class="ic-dropdown ic-size12"></i>
+                                                </div>
+                                            </div>
+                                            <ul class="option-list">
+                                                <li class="option">선택-1</li>
+                                                <li class="option">선택-2</li>
+                                                <li class="option">선택-3</li>
+                                                <li class="option">선택-4</li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="info-card div-border-line">
-                            <div class="info-card__header">
-                                <h3 class="info-card__title title5">
-                                    <span class="dot"></span>Language
-                                </h3>
-                            </div>
-                            <div class="info-card__list">
-                                <div class="info-item">
-                                    <div class="select-box">
-                                        <div class="selected">
-                                            <div class="selected__value">선택해주세요</div>
-                                            <div class="arrow-dropdow">
-                                                <i class="ic-dropdown ic-size12"></i>
+                        <!-- 환자정보 :: e -->
+
+                        <div class="contents__body--right h-100vh">
+                            <div class="measurement-section">
+                                <div class="measurement-inner">
+                                    <div class="gauge-container">
+                                        <div class="lines-column">
+                                            <div class="line gray"></div>
+                                            <div class="lines-box">
+                                                <div class="line blue"></div>
+                                                <div class="line blue"></div>
+                                                <div class="line blue"></div>
+                                            </div>
+                                            <div class="line gray"></div>
+                                        </div>
+                                        
+                                        <div class="ball-path">
+                                            <div class="ball">
+                                                <div class="instruction-bubble"><span>파란 공</span>을 파란 선 <span>사이에 위치</span>하도록 불어주세요!</div>
+                                                <img src="../../resource/images/common/ball-blue.svg">
                                             </div>
                                         </div>
-                                        <ul class="option-list">
-                                            <li class="option">선택-1</li>
-                                            <li class="option">선택-2</li>
-                                            <li class="option">선택-3</li>
-                                            <li class="option">선택-4</li>
-                                        </ul>
+
+                                        <div class="lines-column">
+                                            <div class="line gray"></div>
+                                            <div class="lines-box">
+                                                <div class="line blue"></div>
+                                                <div class="line blue"></div>
+                                                <div class="line blue"></div>
+                                            </div>
+                                            <div class="line gray"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="btm-box ball-btn">
+                                        <button type="button" class="btn-start"></button>
+                                        <div class="btm-bg">
+                                            <img src="../../resource/images/common/pipe.svg">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="timer-sec">
+                                    <div class="timer-sec__text">
+                                        <p class="body2-Semibold ta-c">잔여시간</p>
+                                        <strong class="title5"><span class="timer-sec__num title2">10</span>초</strong>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- 환자정보 :: e -->
 
-                    <div class="contents__body--right h-100vh">
-                        <div class="measurement-section">
-                            <div class="measurement-inner">
-                                <div class="gauge-container">
-                                    <div class="lines-column">
-                                        <div class="line gray"></div>
-                                        <div class="lines-box">
-                                            <div class="line blue"></div>
-                                            <div class="line blue"></div>
-                                            <div class="line blue"></div>
-                                        </div>
-                                        <div class="line gray"></div>
-                                    </div>
-                                    
-                                    <div class="ball-path">
-                                        <div class="ball">
-                                            <div class="instruction-bubble"><span>파란 공</span>을 파란 선 <span>사이에 위치</span>하도록 불어주세요!</div>
-                                            <img src="../../resource/images/common/ball-blue.svg">
-                                        </div>
-                                    </div>
-
-                                    <div class="lines-column">
-                                        <div class="line gray"></div>
-                                        <div class="lines-box">
-                                            <div class="line blue"></div>
-                                            <div class="line blue"></div>
-                                            <div class="line blue"></div>
-                                        </div>
-                                        <div class="line gray"></div>
-                                    </div>
-                                </div>
-
-                                <div class="btm-box ball-btn">
-                                    <button type="button" class="btn-start"></button>
-                                    <div class="btm-bg">
-                                        <img src="../../resource/images/common/pipe.svg">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="timer-sec">
-                                <div class="timer-sec__text">
-                                    <p class="body2-Semibold ta-c">잔여시간</p>
-                                    <strong class="title5"><span class="timer-sec__num title2">10</span>초</strong>
-                                </div>
-                            </div>
-                            <!-- <div class="circle_progress_wrap">
-                                <svg class="circle_progress" width="120" height="120" viewBox="0 0 120 120">
-                                    <circle class="frame" cx="60" cy="60" r="54" stroke-width="12" />
-                                    <circle class="bar" cx="60" cy="60" r="54" stroke-width="12" />
-                                </svg>
-                                <input id="control" type="range" value="60" />
-                                <strong class="value"></strong>
-                            </div> -->
-                        </div>
+                    <!-- 하단 button :: s -->
+                    <div class="btn-wrap__type3">
+                        <button class="btn-bak btn-white sm" type="button"><i class="ic-btn-bak ic-size24"></i></button>
                     </div>
-                </div>
-
-                <!-- 하단 button :: s -->
-                 <div class="btn-wrap__type3">
-                    <button class="btn-bak btn-white sm" type="button"><i class="ic-btn-bak ic-size24"></i></button>
-                </div>
                 <!-- 하단 button :: e -->
                  </div>
             </main>
