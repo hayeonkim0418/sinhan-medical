@@ -99,6 +99,7 @@
 .bg-default-white {background-color: var(--default-white) !important;}
 
 /* height */
+.h-100vh {height: calc(100vh - 6rem) !important;}
 .h-auto {height: auto !important;}
 
 /* padding */

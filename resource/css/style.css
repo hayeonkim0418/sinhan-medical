@@ -101,7 +101,7 @@ img {max-width: 100%;}
     }
     .contents__body {display: flex; justify-content: space-between; gap: 1.5rem; height: 100%;
         .contents__body--left {flex: 0; /*flex: 0 0 auto;*/ min-width: 20rem;}
-        .contents__body--right {position: relative; flex: 1;}
+        .contents__body--right {position: relative; flex: 1; /*display: flex; justify-content: center; align-items: center;*/ min-height: 31.25rem;}
     }
 }
 
@@ -191,7 +191,7 @@ img {max-width: 100%;}
 /* 재실행 */
 /* 팝업 */
 /* 측정대기 */
-.measurement-section {display: block; /*align-items: center; flex-direction: column; justify-content: center;*/ margin-top: 4.8125rem; /*height: calc(100vh - 6rem);*/}
+.measurement-section {display: block; /*align-items: center; flex-direction: column; justify-content: center;*/ margin-top: 4.8125rem; width: calc(100% - 15rem);}
 .measurement-inner {display: inline-flex; flex-direction: column; align-items: center;}
 .instruction-bubble {position: absolute; bottom: calc(100% + 2rem); left: 50%; transform: translateX(-50%); padding: 1.25rem 2rem; white-space: nowrap; background-color: var(--default-white); border-radius: 16px;
  border: 1px solid #000; z-index: 10; font-size: var(--font-body1-size); line-height: 1.5; font-weight: 700;
@@ -209,26 +209,38 @@ img {max-width: 100%;}
 /* 공 움직임 설정 */
 .ball-path {position: relative; width: 10rem; height: 100%;}
 .ball {position: absolute; top: 45%; left: 50%; transform: translate(-50%, -50%); transition: transform 0.1s ease-out; width: 10rem; height: auto; text-align: center;}
-.btm-box {display: inline-flex; align-items: center; flex-direction: column; gap: 2.5rem;}
+.btm-box {position: relative; display: flex; align-items: center; flex-direction: column; gap: 2.5rem; margin-top: -7.125rem;
+    &.balloon-btn {margin-top: 0;}
+}
 .btn-start {width: 11.25rem; height: 11.25rem; background: url(../../resource/images/common/btn-start.svg) no-repeat center/cover; transition: all 0.2s ease-in-out;
     &:hover {background: url(../../resource/images/common/btn-start_hover.svg) no-repeat center/cover;}
 }
 
 /* 소아 */
-.measurement-section__balloon {
-    .measurement-inner {display: flex;}
-    .gauge-container {height: 22.5rem; background: url(../../resource/images/common/balloon-blue_bg.svg) no-repeat center/cover;}
+.measurement-section__balloon {display: flex; flex-direction: column; align-items: center; /*margin-top: 0;*/ 
+    .measurement-inner {gap: 5.125rem;}
+    &.wait .gauge-container {width: 22.5rem; height: 22.5rem;}
+    .gauge-container {position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center; width: 35rem; height: 35rem; background: url(../../resource/images/common/balloon-blue_bg.svg) no-repeat center/cover;}
 } 
-.balloon-path {width: 22.5rem;}
-.balloon {top: 63%;}
-/* .balloon-test__content {display: flex; align-items: center; flex-direction: column; gap: 5.25rem; width: calc(100% - 15rem);}
-.balloon__bg.wait {display: flex; align-items: center; justify-content: center; width: 22.5rem; height: 22.5rem; background: url(../../resource/images/common/balloon-blue_bg.svg) no-repeat center / cover;
-    img {margin-top: 5.25rem; width: 10rem;}
+.balloon-path {position: relative; width: 22.5rem;}
+.balloon {position: absolute;
+    top: 50%; /* 정중앙 배치 */
+    left: 50%;
+    transform: translate(-50%, -50%); /* 중심점 보정 */
+    width: 10rem;
+    transition: width 0.3s ease, transform 0.1s ease-out; /* 사이즈 변경 시 부드럽게 */
+    z-index: 5;}
+    .balloon img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
-.balloon__bg {width: 35.375rem; height: 35.375rem; background: url(../../resource/images/common/balloon-blue_bg.svg) no-repeat center / cover;} */
 
 /* 잔여시간 */
-.timer-sec {position: absolute; right: 0; top: 0; display: flex; align-items: center; justify-content: center; width: 15rem; height: 15rem; background-color: var(--default-white); border: 1.5rem solid var(--point); border-radius: 50%; box-shadow: 2.5px 2.5px 8px 0 rgba(0, 0, 0, 0.12);
+.timer-sec {position: absolute; right: 0; top: 0; display: flex; align-items: center; justify-content: center; width: 15rem; height: 15rem; background-color: var(--default-white); border: 1.5rem solid var(--point); border-radius: 50%; box-shadow: 2.5px 2.5px 8px 0 rgba(0, 0, 0, 0.12); z-index: 10;
     .timer-sec__text {
         p {color: var(--neutral-700);}
         .timer-sec__num {padding-right: .25rem;}
