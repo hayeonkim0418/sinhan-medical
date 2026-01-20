@@ -18,6 +18,7 @@
     --bg2: #001848;
     --bg3: #75C7F6;
     --point: #006AFE;
+    --pink-50: #FF3E7F;
     --red-50: #FF3F3F;
     --color-disabled: #eaeaea;
 
@@ -318,7 +319,9 @@ input[type=date].date {
             .ic-info {background-color: var(--default-white);}
         }
     }
-    .num {color: var(--neutral-500);}
+    .pop-up__num, .pop-up__desc {font-weight: 400; line-height: 1.5;}
+    .pop-up__num {font-size: var(--font-body5-size); color: var(--neutral-500);}
+    .pop-up__desc {font-size: var(--font-body3-size); text-align: center;}
 }
 
 /* pagination */
