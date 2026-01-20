@@ -144,12 +144,18 @@
                                         </div>
                                     </div>
 
-                                    <div class="timer-sec">
-                                        <div class="timer-sec__text">
+                                    <!-- 잔여시간 :: s -->
+                                    <div class="timer-container">
+                                        <svg class="timer-svg" viewBox="0 0 100 100">
+                                            <circle class="timer-bg" cx="50" cy="50" r="45"></circle>
+                                            <circle class="timer-progress" cx="50" cy="50" r="45"></circle>
+                                        </svg>
+                                        <div class="timer-text">
                                             <p class="body2-Semibold ta-c">잔여시간</p>
-                                            <strong class="title5"><span class="timer-sec__num title2">10</span>초</strong>
+                                            <span id="seconds" class="title2">10</span><small class="title5">초</small>
                                         </div>
                                     </div>
+                                    <!-- 잔여시간 :: e -->
                                 </div>
                             </div>
                     </div>

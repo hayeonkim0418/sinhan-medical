@@ -174,11 +174,16 @@ img {max-width: 100%;}
     .balloon img {display: block; width: 100%; height: auto;}
 
 /* 잔여시간 */
-.timer-sec {position: absolute; right: 0; top: 0; display: flex; align-items: center; justify-content: center; width: 15rem; height: 15rem; background-color: var(--default-white); border: 1.5rem solid var(--point); border-radius: 50%; box-shadow: 2.5px 2.5px 8px 0 rgba(0, 0, 0, 0.12); z-index: 10;
-    .timer-sec__text {
-        p {color: var(--neutral-700);}
-        .timer-sec__num {padding-right: .25rem;}
-    }
+.timer-container {position: absolute; top: 0; right: 0; display: flex; justify-content: center; align-items: center; width: 15rem; height: 15rem;
+    .timer-svg {transform: rotate(-90deg); width: 100%; height: 100%;}
+    circle {fill: var(--default-white); stroke-width: 10; stroke-linecap: round;}
+    .timer-bg {stroke: var(--neutral-200);}
+    .timer-progress {stroke: var(--point); stroke-dasharray: 282.7; stroke-dashoffset: 0; transition: stroke-dashoffset 1s linear;}
+    .timer-text {position: absolute; text-align: center;
+        p {margin: 0; color: var(--neutral-700);}
+        span {color: var(--neutral-900);}
+        small {margin-left: .25rem; color: var(--neutral-900);}
+    }   
 }
 
 /********************************* 02 demo 데모 *********************************/
