@@ -14,7 +14,7 @@ export const initCustomChart = (canvasId) => {
   const SIDE_PADDING = 1.2;
   // =============================================================
 
-  const rawData = [48, 18, 25, 35];
+  const rawData = [48, 18, 24.5, 35];
   const labels = ["6 Mar", "7 Jun", "6 Sep", "11 Nov"];
   let activeIndex = 0;
 
@@ -28,10 +28,11 @@ export const initCustomChart = (canvasId) => {
       0,
       chartArea.top,
       0,
-      chartArea.bottom
+      chartArea.bottom,
     );
-    gradient.addColorStop(0, "rgba(0, 106, 254, 0.4)");
-    gradient.addColorStop(0.8, "rgba(0, 106, 254, 0.0)");
+    // background 변경
+    gradient.addColorStop(0, "rgba(0, 106, 254, 0.2)");
+    gradient.addColorStop(0.9, "rgba(0, 106, 254, 0.01)");
     return gradient;
   };
 
@@ -98,9 +99,9 @@ export const initCustomChart = (canvasId) => {
           0,
           chartArea.top,
           0,
-          chartArea.bottom
+          chartArea.bottom,
         );
-        gradient.addColorStop(0, "rgba(0, 106, 254, 0.4)");
+        gradient.addColorStop(0, "#006afe");
         gradient.addColorStop(0.8, "rgba(0, 106, 254, 0.0)");
         ctx.fillStyle = gradient;
 
@@ -109,7 +110,7 @@ export const initCustomChart = (canvasId) => {
             chartArea.left,
             firstPoint.y,
             xStart - chartArea.left + 1,
-            chartArea.bottom - firstPoint.y
+            chartArea.bottom - firstPoint.y,
           );
         }
         ctx.restore();
@@ -140,7 +141,7 @@ export const initCustomChart = (canvasId) => {
         label: "Main Data",
         data: rawData,
         borderColor: "#006afe",
-        borderWidth: 4,
+        borderWidth: 6,
         fill: true,
         backgroundColor: (context) => createGradient(context.chart),
         tension: 0, // chart line 0일경우 직선 숫자 올라질수록 부드럽게 연결됨
@@ -157,13 +158,13 @@ export const initCustomChart = (canvasId) => {
         pointRadius: 8,
         pointBackgroundColor: "#ffffff",
         pointBorderColor: "#006afe",
-        pointBorderWidth: 4,
+        pointBorderWidth: 6,
 
         // [Hover 스타일 고정]
         pointHoverRadius: 8,
         pointHoverBackgroundColor: "#ffffff",
         pointHoverBorderColor: "#006afe",
-        pointHoverBorderWidth: 4,
+        pointHoverBorderWidth: 6,
 
         showLine: false,
         order: 0,
@@ -208,17 +209,21 @@ export const initCustomChart = (canvasId) => {
         legend: { display: false },
         tooltip: {
           enabled: true,
-          backgroundColor: "rgba(30, 41, 59, 0.9)",
-          padding: 12,
-          cornerRadius: 8,
-          titleFont: { size: 13 },
-          bodyFont: { size: 14, weight: "bold" },
+          backgroundColor: "#001848",
+          padding: {
+            top: 2,
+            right: 16,
+            bottom: 2,
+            left: 16,
+          },
+          // titleFont: { size: 13 },
+          bodyFont: { size: 24, weight: "700", lineHeight: 1.5 },
           displayColors: false,
           yAlign: "bottom",
           caretPadding: 20,
           callbacks: {
             title: () => "",
-            label: (context) => `${context.formattedValue} 건`,
+            label: (context) => `${context.formattedValue}`,
           },
           filter: (tooltipItem) => tooltipItem.datasetIndex === 0,
         },
@@ -229,15 +234,18 @@ export const initCustomChart = (canvasId) => {
           max: 50, // Y축 최댓값
           border: { display: false },
           grid: {
-            color: "#e2e8f0",
+            color: "#DDD",
             borderDash: [6, 6],
             drawBorder: false,
           },
           ticks: {
             stepSize: 10,
+            // padding: {
+            //   right: 10,
+            // },
             padding: 10,
-            color: "#64748b",
-            font: { size: 12 },
+            color: "#4B4B4B",
+            font: { size: 18 },
           },
         },
         x: {
@@ -246,12 +254,15 @@ export const initCustomChart = (canvasId) => {
           grid: { display: false, drawBorder: false },
           border: { display: false },
           ticks: {
-            padding: 10,
+            padding: 16,
+            // padding: {
+            //   top: 16,
+            // },
             color: (context) =>
-              context.index === activeIndex ? "#006afe" : "#94a3b8",
+              context.index === activeIndex ? "#006afe" : "#4B4B4B",
             font: (context) => ({
-              size: 14,
-              weight: context.index === activeIndex ? "bold" : "normal",
+              size: 18,
+              weight: context.index === activeIndex ? "600" : "400",
             }),
           },
         },
@@ -261,14 +272,14 @@ export const initCustomChart = (canvasId) => {
           event,
           "index",
           { intersect: false },
-          true
+          true,
         );
         if (activeElements.length > 0) {
           const newIndex = activeElements[0].index;
           if (activeIndex !== newIndex) {
             activeIndex = newIndex;
             chart.data.datasets[1].data = rawData.map((val, i) =>
-              i === newIndex ? val : null
+              i === newIndex ? val : null,
             );
 
             // 1. 클릭 업데이트임을 표시
