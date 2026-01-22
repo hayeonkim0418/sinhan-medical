@@ -1,135 +1,167 @@
 @import url("reset.css");
 @import url("common.css");
 
+/* 인쇄 시 강제로 페이지를 나누는 클래스 */
+.page-break {
+    display: none; /* 화면에서는 보이지 않음 */
+}
+
+/* [공통 스타일] : 화면과 프린트 모두에 적용 */
 body {
-    -webkit-print-color-adjust: exact; /* 크롬, 사파리 */
+    -webkit-print-color-adjust: exact; 
     print-color-adjust: exact;
     line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5; /* 스크린에서 페이지 구분을 위해 배경색 추가 */
 }
 
-.print-container {
-    /* width: 210mm;  
-    height: 297mm; 
-    padding: 12.6mm 20.3mm;  */
-    width: 794px; /*height: 1123px;*/
-    box-sizing: border-box; 
-    
-    /* 화면과 동일한 배치를 위해 사용 */
-    position: relative;
+.page {
+    width: 210mm; /* A4 표준 너비 */
+    min-height: 297mm;
+    /* padding: 48px 77px; */
+    padding: 0 77px 48px;
+    margin: 20px auto;
     background-color: #fff;
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* 스크린용 그림자 */
 }
 
-@media screen {
-    .print-container {padding: 48px 77px;}
-    img {max-width: 100%;}
-    .page {
-        width: 794px;
-        margin: 20px auto;
-        background-color: #fff;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    /* ------------------ */
-    .sinhan img {width: 120px;}
-    .snuh img {width: 320px;}
-    .jaeger img {width: 120px;}
-    .print__header {display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; height: 72px;}
-        /* .print__header {position: fixed; top: 0; display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; height: 72px; width: 100%;} */
-    .print__body .div-border-line2 {padding: 20px 24px; border: 1px solid var(--neutral-200); border-radius: 8px;}
-    .print-card__body {display: flex; align-items: center; gap: 16px; margin-bottom: 12px;
-        .print-card__info {font-size: 18px; color: var(--neutral-900); font-weight: 700;}
-    }
-    .print-card__grid {display: grid; grid-template-columns: repeat(2, 1fr);
-        .print-card__list {
-            .info-item {display: flex; align-items: center; gap: 24px;
-                + .info-item {margin-top: 4px;}
-                .info-item__label, .info-item__value {font-size: 12px;}
-                .info-item__label {width: 80px; font-weight: 600; color: var(--neutral-700);}
-                .info-item__value {font-weight: 700; color: var(--neutral-900);}
-            }
-        }
-    }
-    .print-table-wrap {margin-top: 56px;
-        + .print-table-wrap {margin-top: 56px;}
-        thead th, tbody td {padding: 6px 8px; text-align: center;}
-        thead {
-            &::after {content: ""; display: table-row; height: 4px;}
-            th {padding: 6px 8px; background-color: var(--neutral-100); color: var(--neutral-900); font-size: 9px; font-weight: 700;
-                &:first-child { border-radius: 8px 0 0 8px;}
-                &:last-child { border-radius: 0 8px 8px 0; }
-            }
-        }
-        th, td {line-height: 1.5;}
-        tbody {
-            tr {border-bottom: 1px solid var(--neutral-200);}
-            td {color: var(--neutral-700); font-size: 10px;
-                &.color-point {color: var(--point); font-weight: 600;}
-                &.color-red-50 {color: var(--red-50); font-weight: 600;}
-            }
-        }
-        .table__title {margin-bottom: 24px; font-size: 16px; color: var(--neutral-900); font-weight: 700;}
-
-    }
+.print-top-margin {
+    height: 48px; /* 기존 .page에 주었던 상단 여백 48px과 동일하게 설정 */
 }
 
+/* 이미지 및 헤더 레이아웃 */
+.sinhan img {width: 120px;}
+.snuh img {width: 320px;}
+.jaeger img {width: 120px;}
+img {max-width: 100%; display: block;}
+
+.print__header {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    margin-bottom: 40px; 
+    height: 72px;
+}
+
+/* 카드 및 정보 섹션 */
+.print__body .div-border-line2 {padding: 16px 20px; border: 1px solid var(--neutral-200); border-radius: 4px;}
+.print-card__body {
+    display: flex; 
+    align-items: center; 
+    gap: 24px; 
+    padding-bottom: 12px; 
+    margin-bottom: 12px; 
+    border-bottom: 1px solid var(--neutral-200);
+}
+.print-card__info {font-size: 18px; color: var(--neutral-900); font-weight: 700;}
+
+.info-item__label, .info-item__value {font-size: 12px;}
+.info-item__label {width: 80px; font-weight: 600; color: var(--neutral-700);}
+
+.print-card__grid {
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr);
+}
+.print-card__list .info-item {
+    display: flex; 
+    align-items: center; 
+    gap: 24px;
+}
+.print-card__list .info-item + .info-item {margin-top: 8px;}
+.print-card__list .info-item__value {font-weight: 700; color: var(--neutral-900);}
+
+/* 테이블 스타일 */
+.print-layout-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+}
+
+.print-layout-table > thead > tr > td,
+.print-layout-table > tbody > tr > td {
+    padding: 0;
+    border: none;
+}
+
+.print-table-wrap {
+    margin-top: 48px;
+    width: 100%;
+}
+.print-table-wrap + .print-table-wrap {margin-top: 48px;}
+.print-table-wrap table {width: 100%; border-collapse: collapse;}
+.print-table-wrap thead th, .print-table-wrap tbody td {padding: 6px 8px; text-align: center; line-height: 1.5;}
+
+.print-table-wrap thead th {
+    background-color: var(--neutral-100); 
+    color: var(--neutral-900); 
+    font-size: 9px; 
+    font-weight: 700;
+}
+.print-table-wrap thead th:first-child { border-radius: 4px 0 0 4px;}
+.print-table-wrap thead th:last-child { border-radius: 0 4px 4px 0; }
+
+.print-table-wrap tbody tr {border-bottom: 1px solid var(--neutral-200);}
+.print-table-wrap tbody td {color: var(--neutral-700); font-size: 10px;}
+.print-table-wrap tbody td.color-point {color: var(--point); font-weight: 600;}
+.print-table-wrap tbody td.color-red-50 {color: var(--red-50); font-weight: 600;}
+
+.table__title {margin-bottom: 24px; font-size: 16px; color: var(--neutral-900); font-weight: 700;}
+
+/* 본문 내의 일반 데이터 테이블의 헤더 반복을 방지 */
+.print-table-wrap table thead {
+    display: table-row-group !important; /* table-header-group 대신 row-group을 써서 반복을 막음 */
+}
+
+/* 대신 레이아웃용(로고) 테이블의 헤더는 반드시 반복되게 유지 */
+.print-layout-table > thead {
+    display: table-header-group !important;
+}
+
+/* [프린트 전용 설정] : 불필요한 여백 제거 및 페이지 끊김 방지 */
 @media print {
     @page {
-        size: A4; /* 또는 auto */
-        margin: 0; /* 피그마에서 이미 여백을 포함해 디자인했다면 0 */
-        padding: 48px 77px;
+        size: A4;
+        margin: 0;
     }
-    body {padding: 0; margin: 0; line-height: 1.5;}
-    table {width: 100%; page-break-inside: auto; /* 테이블 중간 끊김 허용 */}
-    tr {page-break-inside: avoid; /* 행(Row) 하나가 두 페이지에 걸쳐 잘리는 것 방지 */ page-break-after: auto; }
-    thead {display: table-header-group; /* ★ 중요: 매 페이지 상단에 표 제목줄 반복 */}
-    img {max-width: 100%;}
-
-    .page {width: 210mm; height: 297mm; margin: 0; box-shadow: none;}
-    .page-number:after {/* 브라우저마다 지원 여부가 다를 수 있으나 표준 방식임 */content: "Page " counter(page);}
-    .section-title {page-break-before: always; /* 이 섹션이 시작되기 전에 무조건 다음 장으로 넘김 */}
-    .signature-box {page-break-inside: avoid; /* 서명란과 직인은 한 세트이므로 절대 잘리지 않게 함 */}
-    .sinhan img {width: 120px;}
-    .snuh img {width: 320px;}
-    .jaeger img {width: 120px;}
-    .print__header {display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; height: 72px;}
-    .print__body .div-border-line2 {padding: 20px 24px; border: 1px solid var(--neutral-200); border-radius: 8px;}
-    .print-card__body {display: flex; align-items: center; gap: 16px; margin-bottom: 12px;
-        .print-card__info {font-size: 18px; color: var(--neutral-900); font-weight: 700;}
+    body { background-color: #fff; }
+    .page-break {
+        display: block;
+        page-break-before: always; /* 이 요소 앞에서 페이지를 나눔 */
+        height: 0;
+        margin: 0;
+        border: none;
     }
-    .print-card__grid {display: grid; grid-template-columns: repeat(2, 1fr);
-        .print-card__list {
-            .info-item {display: flex; align-items: center; gap: 24px;
-                + .info-item {margin-top: 4px;}
-                .info-item__label, .info-item__value {font-size: 12px;}
-                .info-item__label {width: 80px; font-weight: 600; color: var(--neutral-700);}
-                .info-item__value {font-weight: 700; color: var(--neutral-900);}
-            }
-        }
+    .print-top-margin {
+        display: block;
+        height: 48px;
     }
-    .print-table-wrap {margin-top: 56px;
-        + .print-table-wrap {margin-top: 56px;}
-        thead th, tbody td {padding: 6px 8px; text-align: center;}
-        thead {
-            &::after {content: ""; display: table-row; height: 4px;}
-            th {padding: 6px 8px; background-color: var(--neutral-100); color: var(--neutral-900); font-size: 9px; font-weight: 700;
-                &:first-child { border-radius: 8px 0 0 8px;}
-                &:last-child { border-radius: 0 8px 8px 0; }
-            }
-        }
-        th, td {line-height: 1.5;}
-        tbody {
-            tr {border-bottom: 1px solid var(--neutral-200);}
-            td {color: var(--neutral-700); font-size: 10px;
-                &.color-point {color: var(--point); font-weight: 600;}
-                &.color-red-50 {color: var(--red-50); font-weight: 600;}
-            }
-        }
-        .table__title {margin-bottom: 24px; font-size: 16px; color: var(--neutral-900); font-weight: 700;}
-
+    .page {
+        padding-top: 0;
+        margin: 0;
+        box-shadow: none;
+        width: 210mm;
+        height: 297mm;
+        page-break-after: always;
     }
+    .print-layout-table {
+        display: table;
+        width: 100%;
+        border-spacing: 0;
+    }
+    /* .print-layout-table > thead {display: table-header-group; } */
+    /* 인쇄 시 본문 테이블 헤더가 다음 장에 나타나지 않도록 강제 */
+    .print-table-wrap table thead {
+        display: table-row-group;
+    }
+    
+    /* 기존 header 마진 조정 (선택사항) */
+    .print__header {
+        margin-bottom: 20px; 
+    }
+    .print-table-wrap { page-break-inside: auto; }
+    tr { page-break-inside: avoid; page-break-after: auto; }
+    thead { display: table-header-group; }
 }
-
-
-
-/* .no-print {
-    display: none !important;
-} */
