@@ -13,7 +13,8 @@ body {
     line-height: 1.5;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5; /* 스크린에서 페이지 구분을 위해 배경색 추가 */
+    background-color: #f5f5f5; 
+    counter-reset: page_counter; /* 전체 문서에 페이지 카운터 초기화 */
 }
 
 .page {
@@ -28,8 +29,30 @@ body {
     box-shadow: 0 0 10px rgba(0,0,0,0.1); /* 스크린용 그림자 */
 }
 
+.print-container {
+    position: relative; /* 페이지 번호 배치를 위한 기준점 */
+}
+
 .print-top-margin {
     height: 48px; /* 기존 .page에 주었던 상단 여백 48px과 동일하게 설정 */
+}
+
+/* 페이지 번호 스타일 */
+.print-page-number-wrap {
+    position: relative;
+    text-align: right;    /* 오른쪽 정렬 */
+    font-size: 12px;
+    font-weight: 400;
+    color: #666;
+    letter-spacing: -0.6px;
+    margin-bottom: -15px; /* 로고 레이아웃과 너무 떨어지지 않게 조정 */
+    top: 0;
+}
+
+/* 현재 페이지 번호 자동 증가 */
+.current-page::before {
+    counter-increment: page_counter;
+    content: counter(page_counter);
 }
 
 /* 이미지 및 헤더 레이아웃 */
@@ -44,6 +67,8 @@ img {max-width: 100%; display: block;}
     justify-content: space-between; 
     margin-bottom: 40px; 
     height: 72px;
+    position: relative;
+    z-index: 1;
 }
 
 /* 카드 및 정보 섹션 */
@@ -146,6 +171,9 @@ img {max-width: 100%; display: block;}
         height: 297mm;
         page-break-after: always;
     }
+    .print-page-number-wrap {
+        display: block;
+    }
     .print-layout-table {
         display: table;
         width: 100%;
@@ -155,6 +183,10 @@ img {max-width: 100%; display: block;}
     /* 인쇄 시 본문 테이블 헤더가 다음 장에 나타나지 않도록 강제 */
     .print-table-wrap table thead {
         display: table-row-group;
+    }
+
+    .print-layout-table thead {
+        display: table-header-group !important; /* 모든 페이지 상단 반복 강제 */
     }
     
     /* 기존 header 마진 조정 (선택사항) */
