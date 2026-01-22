@@ -1,5 +1,5 @@
 import { Header } from "./Header.js";
-// import { Password } from "./Password.js";
+import { Password } from "./Password.js";
 import { ProgressBar } from "./ProgressBar.js";
 import { TableTextScroll } from "./TableTextScroll.js";
 import { SelectEvent } from "./SelectEvent.js";
@@ -15,6 +15,7 @@ SelectEvent();
 SelectPerson();
 CountDown();
 window.addEventListener("DOMContentLoaded", () => {
+  Password();
   initCustomChart("customLineChart");
   initCustomChartNoData("initCustomChartNoData");
 });
