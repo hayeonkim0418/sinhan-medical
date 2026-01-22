@@ -38,12 +38,12 @@ body {background-color: var(--bg1);}
 /* login bar */
 img {max-width: 100%;}
 .login-side {position: relative; width: 31.125rem; display: flex;
-    flex-direction: column; flex-shrink: 0; padding: 7.5rem 1.5rem 4.9375rem 1.5rem; border-right: 1px solid var(--default-black); background-color: #F7F7F7; overflow: hidden;
-    .login-side__header {position: absolute; top: 7.5rem; left: 50%; transform: translateX(-50%); width: calc(100% - 3rem); height: 100%;
+    flex-direction: column; flex-shrink: 0; border-right: 1px solid var(--default-black); background-color: #F7F7F7; overflow: hidden;
+    .login-side__header {position: absolute; top: 7.5rem; left: 50%; transform: translateX(-50%); width: calc(100% - 3rem); height: calc(100% - 7.5rem);
         .login-side__header-title {margin-bottom: 1.5rem;}
     }
 }
-.login-side__img {position: absolute; bottom: 10rem; left: 50%; transform: translateX(-50%); width: 24.375rem;} 
+.login-side__img {position: absolute; bottom: 5rem; left: 50%; transform: translateX(-50%); width: 24.375rem;} 
 .contents.contents__login {
     .login__inner {flex: 1; display: flex; align-items: center; justify-content: center; padding: 3.5rem; min-height: 37.5rem; /* ★중요: 로그인 폼이 찌그러지지 않을 최소 높이 설정 */ background-color: var(--default-white);}
 }
@@ -105,6 +105,19 @@ img {max-width: 100%;}
     }
 }
 
+/* 잔여시간 */
+.timer-container {position: absolute; top: 0; right: 0; display: flex; justify-content: center; align-items: center; width: 15rem; height: 15rem;
+    .timer-svg {transform: rotate(-90deg); width: 100%; height: 100%;}
+    circle {fill: var(--default-white); stroke-width: 10; stroke-linecap: round;}
+    .timer-bg {stroke: var(--neutral-200);}
+    .timer-progress {stroke: var(--point); stroke-dasharray: 282.7; stroke-dashoffset: 0; transition: stroke-dashoffset 1s linear; fill: none;}
+    .timer-text {position: absolute; text-align: center;
+        p {margin: 0; color: var(--neutral-700);}
+        span {color: var(--neutral-900);}
+        small {margin-left: .25rem; color: var(--neutral-900);}
+    }   
+}
+
 /********************************* 01 home 홈  *********************************/
 /* home - 환자 데이터 입력 (Enter Patient Data) */
 .enter-patient-wrap {min-width: 47.5rem;}
@@ -163,28 +176,30 @@ img {max-width: 100%;}
 
 /* 소아 */
 .measurement-section__balloon {display: flex; flex-direction: column; align-items: center; margin-top: 10rem; 
-    &.wait {margin-top: 14.875rem;}
-    &.wait .gauge-container {width: 22.5rem; height: 22.5rem;}
-    &.wait .balloon {width: auto;}
     .measurement-inner {gap: 5.125rem;}
-    .gauge-container {position: relative; display: flex; justify-content: center; align-items: center; width: 35rem; height: 35rem; background: url(../../resource/images/common/balloon-blue_bg.svg) no-repeat center/cover;}
-} 
-.balloon-path {position: relative; min-width: 22.5rem;}
-.balloon {position: absolute; top: 50%;  left: 50%; transform: translate(-50%, -33%); min-width: 10rem; width: 100%; transition: width 0.3s ease, transform 0.1s ease-out; z-index: 5;}
-    .balloon img {display: block; width: 100%; height: auto;}
+    .gauge-container {position: relative; display: flex; justify-content: center; align-items: center; margin: 0 auto; width: 35rem; height: 35rem; aspect-ratio: 1 / 1; background: url(../../resource/images/common/balloon-blue_bg.svg) no-repeat center/contain;}
+    &.wait {margin-top: 14.875rem;
+        .gauge-container {width: 22.5rem; height: 22.5rem;}
+        .balloon img {width: 10rem;}
+    }
+    &.fail-bg {
+        .gauge-container {background: url(../../resource/images/common/balloon-red_bg.svg) no-repeat center/contain;}
+        .instruction-bubble span {color: var(--pink-50);}
+    }
+    &.fail {
+        .balloon img {width: 38.375rem; /* 실패 시 꽉 차게 커진다면 이 수치 사용 */}
+    }
+    /* &.wait .balloon, &.fail .balloon {width: auto;}  */
 
-/* 잔여시간 */
-.timer-container {position: absolute; top: 0; right: 0; display: flex; justify-content: center; align-items: center; width: 15rem; height: 15rem;
-    .timer-svg {transform: rotate(-90deg); width: 100%; height: 100%;}
-    circle {fill: var(--default-white); stroke-width: 10; stroke-linecap: round;}
-    .timer-bg {stroke: var(--neutral-200);}
-    .timer-progress {stroke: var(--point); stroke-dasharray: 282.7; stroke-dashoffset: 0; transition: stroke-dashoffset 1s linear; fill: none;}
-    .timer-text {position: absolute; text-align: center;
-        p {margin: 0; color: var(--neutral-700);}
-        span {color: var(--neutral-900);}
-        small {margin-left: .25rem; color: var(--neutral-900);}
-    }   
-}
+    &:not(.wait) .balloon img {
+        /* width: 320px;  */
+        /* 상황에 따라 조절 (배경 560px에 맞춤) */
+    }
+} 
+.balloon-path {position: relative; /*min-width: 22.5rem;*/ /*min-width: 38.375rem;*/}
+.balloon {position: absolute; top: 50%;  left: 50%; transform: translate(-48.6%, -28%); min-width: 10rem; /*width: 100%;*/ transition: width 0.3s ease, transform 0.1s ease-out; z-index: 5;}
+    .balloon img {display: block; width: auto; max-width: none; height: auto;}
+
 
 /********************************* 02 demo 데모 *********************************/
 .no-data {padding: 5.25rem 0;
@@ -214,18 +229,31 @@ img {max-width: 100%;}
         }
     }
     .result-card {padding: 2.5rem;
-        .result-card__body {display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem;}
+        &.div-bg--white {
+            .result-card__header--lastest .result-card__title {color: var(--neutral-900);
+                .dot {background-color: var(--point);}
+            }
+            .result-card__date {color: var(--neutral-500);}
+            .result-card__body--lastest {background-color: var(--bg1);
+                .lastest__value {
+                    .lastest__value-num {color: var(--neutral-900);}
+                    .lastest__value-ppb {color: var(--neutral-700);}
+                }
+            }
+        } 
+        .result-card__body {display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem;
+            &.result-card__list {display: block; padding-bottom: 1.5rem; border-bottom: 1px solid var(--neutral-300);}
+        }
         .result-card__info {
-            .result-card__name, .result-card__value {font-weight: 700; line-height: 1.5;} 
-            .result-card__name {margin-bottom: .5rem; font-size: var(--font-body2-size);}
-            .result-card__value {font-size: var(--font-body3-size);}
+            .result-card__value {font-size: var(--font-body2-size); font-weight: 700; line-height: 1.5;} 
+            /* .result-card__name {margin-bottom: .5rem; font-size: var(--font-body2-size);} */
         }
         .result-card__list {
-            .info-item {display: flex; gap: .5rem;
+            .info-item {display: flex; align-items: center; gap: 1rem;
                 + .info-item {margin-top: 1rem;}
-                .info-item__label, .info-item__value {font-weight: 600; line-height: 1.5;} 
-                .info-item__label {min-width: 6rem; font-size: var(--font-title6-size); color: var(--neutral-700);}
-                .info-item__value {font-size: var(--font-body3-size);}
+                .info-item__label, .info-item__value {line-height: 1.5;} 
+                .info-item__label {min-width: 5.5rem; font-size: var(--font-body3-size); color: var(--neutral-700); font-weight: 600; }
+                .info-item__value {font-size: var(--font-body3-size); font-weight: 700; color: var(--neutral-900);}
             }
         }
         .result-card__header--lastest {display: flex; align-items: baseline; justify-content: space-between; /*margin-bottom: 1.5rem;*/
@@ -249,9 +277,13 @@ img {max-width: 100%;}
 /* 데이터 리스트 data list */
 .data-list__total {margin-bottom: 1rem; color: var(--neutral-700);}
 .total-num {color: var(--bg2);}
-.table-box__checkbox {
+.table-box__data-list {
+    tbody tr td:nth-child(2) {font-weight: 600;}
     tbody tr:hover {background-color: var(--neutral-200);}
     tbody tr:hover td:first-child, tbody tr:hover td:nth-child(2) {color: var(--point);}
+    tbody td.color-point {font-weight: 400;
+        &:hover {font-weight: 600;}
+    }
 }
 
 
