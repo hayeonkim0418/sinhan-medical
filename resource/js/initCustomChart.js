@@ -2,6 +2,7 @@
 
 // 1. Chart.js 로드 (브라우저 환경에서 UMD 방식 사용 시 전역 Chart 객체 참조)
 // 만약 npm 환경이라면: import Chart from 'chart.js/auto';
+import "https://cdn.jsdelivr.net/npm/chart.js";
 
 export const initCustomChart = (canvasId) => {
   const canvas = document.getElementById("customLineChart");
@@ -24,12 +25,7 @@ export const initCustomChart = (canvasId) => {
   const createGradient = (chart) => {
     const { ctx, chartArea } = chart;
     if (!chartArea) return null;
-    const gradient = ctx.createLinearGradient(
-      0,
-      chartArea.top,
-      0,
-      chartArea.bottom,
-    );
+    const gradient = ctx.createLinearGradient(0, chartArea.top, 0, chartArea.bottom);
     // background 변경
     gradient.addColorStop(0, "rgba(0, 106, 254, 0.2)");
     gradient.addColorStop(0.9, "rgba(0, 106, 254, 0.01)");
@@ -45,12 +41,7 @@ export const initCustomChart = (canvasId) => {
       const meta = args.meta;
       const activeElement = meta.data[activeIndex];
 
-      if (
-        !activeElement ||
-        activeElement.x === undefined ||
-        activeElement.y === undefined
-      )
-        return;
+      if (!activeElement || activeElement.x === undefined || activeElement.y === undefined) return;
 
       const currentRadius = activeElement.options.radius;
       // 애니메이션 자연스럽게 보이도록 최소값 조건 완화
@@ -95,23 +86,13 @@ export const initCustomChart = (canvasId) => {
 
       if (firstPoint) {
         ctx.save();
-        const gradient = ctx.createLinearGradient(
-          0,
-          chartArea.top,
-          0,
-          chartArea.bottom,
-        );
+        const gradient = ctx.createLinearGradient(0, chartArea.top, 0, chartArea.bottom);
         gradient.addColorStop(0, "#006afe");
         gradient.addColorStop(0.8, "rgba(0, 106, 254, 0.0)");
         ctx.fillStyle = gradient;
 
         if (xStart > chartArea.left) {
-          ctx.fillRect(
-            chartArea.left,
-            firstPoint.y,
-            xStart - chartArea.left + 1,
-            chartArea.bottom - firstPoint.y,
-          );
+          ctx.fillRect(chartArea.left, firstPoint.y, xStart - chartArea.left + 1, chartArea.bottom - firstPoint.y);
         }
         ctx.restore();
       }
@@ -258,8 +239,7 @@ export const initCustomChart = (canvasId) => {
             // padding: {
             //   top: 16,
             // },
-            color: (context) =>
-              context.index === activeIndex ? "#006afe" : "#4B4B4B",
+            color: (context) => (context.index === activeIndex ? "#006afe" : "#4B4B4B"),
             font: (context) => ({
               size: 18,
               weight: context.index === activeIndex ? "600" : "400",
@@ -268,19 +248,12 @@ export const initCustomChart = (canvasId) => {
         },
       },
       onClick: (event, elements, chart) => {
-        const activeElements = chart.getElementsAtEventForMode(
-          event,
-          "index",
-          { intersect: false },
-          true,
-        );
+        const activeElements = chart.getElementsAtEventForMode(event, "index", { intersect: false }, true);
         if (activeElements.length > 0) {
           const newIndex = activeElements[0].index;
           if (activeIndex !== newIndex) {
             activeIndex = newIndex;
-            chart.data.datasets[1].data = rawData.map((val, i) =>
-              i === newIndex ? val : null,
-            );
+            chart.data.datasets[1].data = rawData.map((val, i) => (i === newIndex ? val : null));
 
             // 1. 클릭 업데이트임을 표시
             isClickUpdate = true;

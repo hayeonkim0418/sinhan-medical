@@ -50,13 +50,15 @@
             <!-- 환자정보 :: s -->
             <div class="contents__body--left">
               <div class="result-card div-border-line">
-                <div class="result-card__header">
-                  <h3 class="result-card__title title5"><span class="dot"></span>Patient</h3>
+                <div class="info-card__header">
+                  <h3 class="info-card__title title5">
+                      <span class="dot"></span>Patient
+                  </h3>
+                  <button type="button">
+                      <i class="ic-manager ic-size32"></i>
+                  </button>
                 </div>
                 <div class="result-card__body result-card__list">
-                  <!-- <div class="result-card__avatar">
-                    <img src="../../resource/images/icon/ic-patient-adult_on.svg">
-                  </div> -->
                   <div class="result-card__info info-item">
                     <p class="info-item__label">Name</p>
                     <span class="result-card__value">홍길동</span>
@@ -104,6 +106,14 @@
             <!-- 환자정보 :: e -->
             <!-- 검사 결과 table :: s -->
             <div class="contents__body--right">
+              <div class="table-wrap div-border-line">
+                <p class="table__title title5"><span class="dot"></span>FeNO Average Trend</p>
+                <!-- chart :: s -->
+                <div class="chart_wrap">
+                  <canvas id="customLineChart"></canvas>
+                </div>
+                <!-- chart :: e -->
+              </div>
               <div class="table-wrap div-border-line">
                 <p class="table__title title5"><span class="dot"></span>과거 검사 이력</p>
                 <div class="table-box">

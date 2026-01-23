@@ -145,6 +145,15 @@ img {max-width: 100%; display: block;}
     display: table-header-group !important;
 }
 
+.chart_wrap {
+    width: 100%;
+    height: auto;
+    min-height: 250px;
+    margin: 0 auto;
+    position: relative;
+    /* 인쇄 시 차트가 너무 커서 잘리는 것 방지 */
+}
+
 /* [프린트 전용 설정] : 불필요한 여백 제거 및 페이지 끊김 방지 */
 @media print {
     @page {
@@ -196,4 +205,15 @@ img {max-width: 100%; display: block;}
     .print-table-wrap { page-break-inside: auto; }
     tr { page-break-inside: avoid; page-break-after: auto; }
     thead { display: table-header-group; }
+
+    .chart_wrap {
+        width: 100% !important;
+        height: 250px !important; /* 고정 높이를 주어 영역 확보 */
+    }
+    
+    /* 차트 선명도 유지 */
+    canvas {
+        max-width: 100% !important;
+        height: auto !important;
+    }
 }

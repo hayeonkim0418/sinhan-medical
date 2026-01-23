@@ -200,6 +200,34 @@ img {max-width: 100%;}
 .balloon {position: absolute; top: 50%;  left: 50%; transform: translate(-49%, -27%); min-width: 10rem; /*width: 100%;*/ transition: width 0.3s ease, transform 0.1s ease-out; z-index: 5;}
     .balloon img {display: block; width: auto; max-width: none; height: auto;}
 
+/* 측정 결과 */
+.contents__body--left {
+    &.left__type2 {display: flex; flex-direction: column; justify-content: space-between;
+        .info-card {padding: 0;}
+        .table-wrap {padding: 0;
+            table tbody {display: block; width: 100%; max-height: 15rem; overflow-y: scroll;
+                &::-webkit-scrollbar {width: 4px;}
+                &::-webkit-scrollbar-thumb {border: 4px solid var(--neutral-200); /*background-color: var(--neutral-200);*/ border-radius: 999px;}
+                &::-webkit-scrollbar-track {background-color: var(--neutral-400); border-radius: 999px;}
+                &::-webkit-scrollbar-button:vertical:end:decrement {display: block;}
+                tr:last-child {border-bottom: 0;}
+            }
+            table thead, table tbody tr, tfoot tr {display: table; table-layout: fixed; width: 25.75rem; /*max-width: 25.75rem;*/}
+            tfoot tr {background-color: var(--bg1); border-top: 1px solid var(--neutral-300); border-bottom: 1px solid var(--neutral-300);} 
+            .table__title {margin-bottom: 1.5rem;}
+        }
+        .info-card__list {margin-top: 1.5rem;}
+    }
+}
+.result-card__ppb {position: relative; background-color: var(--bg4); border-radius: 8px;
+    .result-card__ppb-data {display: flex; align-items: baseline; gap: 1rem; padding: 4.5rem 0 3.875rem 7rem;
+        p, span {color: var(--point);}
+        p {font-size: 15rem; font-weight: 600; line-height: 1.2;}
+        span {font-size: 4.5rem; font-weight: 500;}
+    } 
+    .btn-bak {position: absolute; right: 1.5rem; top: 1.5rem;}
+    .result-img {margin-right: 6.875rem; text-align: right;}
+}
 
 /********************************* 02 demo 데모 *********************************/
 .no-data {padding: 5.25rem 0;
@@ -207,7 +235,20 @@ img {max-width: 100%;}
     p {padding-top: 8px; color: var(--neutral-400);}
 }
 
-/* 환자 정보 patient */
+/********************************* 03 환자 데이터  *********************************/
+/* 데이터 리스트 data list */
+.data-list__total {margin-bottom: 1rem; color: var(--neutral-700);}
+.total-num {color: var(--bg2);}
+.table-box__data-list {
+    tbody tr td:nth-child(2) {font-weight: 600;}
+    tbody tr:hover {background-color: var(--neutral-200);}
+    tbody tr:hover td:first-child, tbody tr:hover td:nth-child(2) {color: var(--point);}
+    tbody td.color-point {font-weight: 400;
+        &:hover {font-weight: 600;}
+    }
+}
+
+/* 환자 정보 patient - 환자 데이터 상세보기 */ 
 .dot {position: absolute; top: 50%; transform: translateY(-50%); left: 0; display: block; width: .375rem; height: .375rem; background-color: var(--point); border-radius: 50%;}
 .ic-bg__gray {display: inline-block; padding: .75rem 1.375rem; min-height: 5rem; background-color: var(--bg1); border-radius: 8px; text-align: center;}
 
@@ -272,19 +313,6 @@ img {max-width: 100%;}
     }
 }
 .table__title {margin-bottom: 2rem;}
-
-/********************************* 03 환자 데이터  *********************************/
-/* 데이터 리스트 data list */
-.data-list__total {margin-bottom: 1rem; color: var(--neutral-700);}
-.total-num {color: var(--bg2);}
-.table-box__data-list {
-    tbody tr td:nth-child(2) {font-weight: 600;}
-    tbody tr:hover {background-color: var(--neutral-200);}
-    tbody tr:hover td:first-child, tbody tr:hover td:nth-child(2) {color: var(--point);}
-    tbody td.color-point {font-weight: 400;
-        &:hover {font-weight: 600;}
-    }
-}
 
 
 .chart_wrap {width: 100%; height: 400px;}

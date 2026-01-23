@@ -17,6 +17,7 @@
     --bg1: #F7F7F7;
     --bg2: #001848;
     --bg3: #75C7F6;
+    --bg4: #EFF5FF;
     --point: #006AFE;
     --pink-50: #FF3E7F;
     --red-50: #FF3F3F;
@@ -84,7 +85,7 @@
 .body5-regular {font-size: .875rem; font-weight: 400; line-height: 1.5;}
 
 /* color */
-.color-point {color: var(--point);}
+.color-point {color: var(--point) !important;}
 .color-red-50 {color: var(--red-50);}
 .color-neutral-100 {color: var(--neutral-100);}
 .color-neutral-200 {color: var(--neutral-200);}
@@ -107,6 +108,7 @@
 .p-0 {padding: 0 !important;}
 .p-r-5 {padding-right: .5rem;}
 .p-b-16 {padding-bottom: 1rem !important;}
+.p-40 {padding: 2.5rem;}
 
 /* margin */
 .m-t-12 {margin-top: .75rem !important;}
@@ -127,7 +129,7 @@
 .btn-wrap__type3 {position: fixed; right: 1.5rem; bottom: 1.5rem; display: flex; flex-direction: column; gap: 1rem;
     a, button {display: flex; align-items: center; justify-content: center;}
 }
-.btn {flex: 1; display: inline-block; padding: 1rem 1.5rem; width: 100%; /* min-width: 450px;*/ min-width: 7.5rem; font-size: var(--font-body3-size); font-weight: 700; line-height: 1.5; border-radius: 8px; color: var(--default-white);
+.btn {flex: 1; display: inline-block; padding: 1rem 1.5rem; width: 100%; /* min-width: 450px;*/ /*min-width: 7.5rem;*/ font-size: var(--font-body3-size); font-weight: 700; line-height: 1.5; border-radius: 8px; color: var(--default-white);
     &.btn-bg2 {background-color: var(--bg2); border: 1px solid var(--bg2);}
     &.btn-point {background-color: var(--point); border: 1px solid var(--point);}
     &.btn-lightgray {background-color: var(--neutral-300); border: 1px solid var(--neutral-300);}
@@ -292,20 +294,21 @@ input[type=date]::-webkit-calendar-picker-indicator {
 .table-title {margin-bottom: 2rem;}
 .table-wrap {padding: 2.5rem; 
     + .table-wrap {margin-top: 1.5rem;}
-    thead th, tbody td {padding: .75rem 1rem; text-align: center; line-height: 1.5;}
+    thead th, tbody td, tfoot th {padding: .75rem 1rem; text-align: center; line-height: 1.5;}
     thead {
         &::after {content: ""; display: table-row; height: 8px;}
-        th {background-color: var(--neutral-100); font-size: var(--font-body4-size); font-weight: 700;
+        th {background-color: var(--neutral-100); font-size: var(--font-body4-size); font-weight: 700; color: var(--neutral-800);
             &:first-child { border-radius: 8px 0 0 8px;}
             &:last-child { border-radius: 0 8px 8px 0; }
         }
     }
     tbody {
         tr {border-bottom: 1px solid var(--neutral-200);}
-        td {font-size: var(--font-body3-size)}
+        td {font-size: var(--font-body3-size); color: var(--neutral-700);}
         td.color-point, td.color-red-50 {font-weight: 600;}
         td.fw-400, td.fw-400 {font-weight: 400;}
     } 
+    tfoot th {color: var(--neutral-900);}
 } 
 /* 글씨 슬라이드 */
 .scroll-td {max-width: 21rem;}

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>신한메디칼</title>
     <link rel="stylesheet" href="../../resource/css/print.css">
+    <!-- <script type="module" src="../../resource/js/global.js"></script> -->
 </head>
 <body>
     <div class="page">
@@ -178,104 +179,12 @@
                                 </div>
                 
                                 <div class="print-table-wrap">
-                                    <p class="table__title ta-c">FeNO Average Trend 그래프 넣어야함</p>
-                                    <div class="table-box">
-                                        <table>
-                                            <caption class="a11y">
-                                            과거 검사 이력
-                                            </caption>
-                                            <colgroup>
-                                                <col width="15%" />
-                                                <col width="" />
-                                                <col width="" />
-                                                <col width="" />
-                                                <col width="" />
-                                                <col width="" />
-                                                <col width="20%" />
-                                            </colgroup>
-                                            <thead>
-                                                <tr>
-                                                    <th scope="col">Date</th>
-                                                    <th scope="col">Time</th>
-                                                    <th scope="col">Mode</th>
-                                                    <th scope="col">NO Value (ppb)</th>
-                                                    <th scope="col">Average (ppb)</th>
-                                                    <th scope="col">Technician</th>
-                                                    <th scope="col">Comment</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>2025-11-07</td>
-                                                    <td>11:02</td>
-                                                    <td>10s</td>
-                                                    <td class="color-point">16</td>
-                                                    <td rowspan="2" class="color-point">15.5</td>
-                                                    <td>박임병</td>
-                                                    <td>심한 감기와 30분 전 식사, 그리고 기침이 지속적으로 발생함</td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td>11:04</td>
-                                                    <td>10s</td>
-                                                    <td class="color-point">15</td>
-                                                    <td>박임병</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>2025-09-06</td>
-                                                    <td>14:22</td>
-                                                    <td>10s</td>
-                                                    <td class="color-point">24</td>
-                                                    <td rowspan="2" class="color-point">24.5</td>
-                                                    <td>정임병</td>
-                                                    <td>Cough</td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td>14:25</td>
-                                                    <td>10s</td>
-                                                    <td class="color-point">24</td>
-                                                    <td>정임병</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>2025-06-07</td>
-                                                    <td>11:04</td>
-                                                    <td>10s</td>
-                                                    <td class="color-point">24</td>
-                                                    <td class="color-point">16</td>
-                                                    <td>박임병</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>2025-03-06</td>
-                                                    <td>14:20</td>
-                                                    <td>10s</td>
-                                                    <td class="color-point">48</td>
-                                                    <td rowspan="3" class="color-point">46</td>
-                                                    <td>정임병</td>
-                                                    <td>30분 전 식사</td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td>14:22</td>
-                                                    <td>10s</td>
-                                                    <td class="color-point">48</td>
-                                                    <td>정임병</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td>14:25</td>
-                                                    <td>10s</td>
-                                                    <td class="color-point">48</td>
-                                                    <td>정임병</td>
-                                                    <td></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                    <p class="table__title ta-c">FeNO Average Trend</p>
+                                    <!-- chart :: s -->
+                                    <div class="chart_wrap">
+                                        <canvas id="customLineChart" width="600" height="250"></canvas>
                                     </div>
+                                    <!-- chart :: e -->
                                 </div>
 
                                 <!-- 페이지 나눔  -->
@@ -325,68 +234,6 @@
                                         </table>
                                     </div>
                                 </div>
-                                <div class="print-table-wrap">
-                                    <p class="table__title ta-c">프린트 체크용</p>
-                                    <div class="table-box">
-                                        <table>
-                                            <caption class="a11y">
-                                            판독 참고지
-                                            </caption>
-                                            <colgroup>
-                                                <col width="25%" />
-                                                <col width="25%" />
-                                                <col width="25%" />
-                                                <col width="25%" />
-                                            </colgroup>
-                                            <thead>
-                                                <tr>
-                                                    <th scope="col">Date</th>
-                                                    <th scope="col">Time</th>
-                                                    <th scope="col">Mode</th>
-                                                    <th scope="col">Comment</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>성인</td>
-                                                    <td class="color-point">< 25</td>
-                                                    <td>25 - 50</td>
-                                                    <td class="color-red-50">> 50</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>소아</td>
-                                                    <td class="color-point">< 20</td>
-                                                    <td>25 - 35</td>
-                                                    <td class="color-red-50">> 35</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Th2-driven inflammation</td>
-                                                    <td class="color-point">Unlikely</td>
-                                                    <td>likely</td>
-                                                    <td class="color-red-50">Significant</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Th2-driven inflammation</td>
-                                                    <td class="color-point">Unlikely</td>
-                                                    <td>likely</td>
-                                                    <td class="color-red-50">Significant</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Th2-driven inflammation</td>
-                                                    <td class="color-point">Unlikely</td>
-                                                    <td>likely</td>
-                                                    <td class="color-red-50">Significant</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Th2-driven inflammation</td>
-                                                    <td class="color-point">Unlikely</td>
-                                                    <td>likely</td>
-                                                    <td class="color-red-50">Significant</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
                             </section>
                         </td>
                     </tr>
@@ -394,5 +241,45 @@
             </table>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const ctx = document.getElementById("customLineChart").getContext("2d");
+
+            new Chart(ctx, {
+                type: "line",
+                data: {
+                    labels: ["2025-03", "2025-06", "2025-09", "2025-11"],
+                    datasets: [{
+                        label: "FeNO Average (ppb)",
+                        data: [46, 16, 24.5, 15.5],
+                        borderColor: "#007aff",
+                        backgroundColor: "rgba(0, 122, 255, 0.1)",
+                        borderWidth: 2,
+                        pointRadius: 4,
+                        fill: true,
+                        tension: 0.2,
+                    }],
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    animation: false, // 인쇄 시 필수
+                    devicePixelRatio: 2,
+                    plugins: {
+                        legend: { display: false },
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            suggestedMax: 60,
+                        },
+                    },
+                },
+            });
+        });
+    </script>
 </body>
 </html>
