@@ -7,7 +7,7 @@
 @import url("style.css");
 
 /* guide */
-body {background-color: var(--default-white);}
+html, body {background-color: var(--default-white);}
 .guide-wrap {margin: 0 auto 4rem auto; max-width: 1600px; padding: 0 20px;}
 
 .module {position: relative; padding-bottom: 5%;}

@@ -1,219 +1,101 @@
-@import url("reset.css");
-@import url("common.css");
-
+@import url("reset.css");@import url("common.css");
 /* 인쇄 시 강제로 페이지를 나누는 클래스 */
-.page-break {
-    display: none; /* 화면에서는 보이지 않음 */
-}
+.page-break { display: none; /* 화면에서는 보이지 않음 */}
 
 /* [공통 스타일] : 화면과 프린트 모두에 적용 */
-body {
-    -webkit-print-color-adjust: exact; 
-    print-color-adjust: exact;
-    line-height: 1.5;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5; 
-    counter-reset: page_counter; /* 전체 문서에 페이지 카운터 초기화 */
-}
+body { -webkit-print-color-adjust: exact; print-color-adjust: exact; line-height: 1.5; margin: 0; padding: 0; background-color: #f5f5f5; counter-reset: page_counter; /* 전체 문서에 페이지 카운터 초기화 */}
 
-.page {
-    width: 210mm; /* A4 표준 너비 */
-    min-height: 297mm;
-    /* padding: 48px 77px; */
-    padding: 0 77px 48px;
-    margin: 20px auto;
-    background-color: #fff;
-    box-sizing: border-box;
-    position: relative;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* 스크린용 그림자 */
-}
+.page { width: 210mm; 
+ min-height: 297mm; /* padding: 48px 77px; */
+ padding: 0 77px 48px; margin: 20px auto; background-color: #fff; box-sizing: border-box; position: relative; box-shadow: 0 0 10px rgba(0,0,0,0.1); /* 스크린용 그림자 */}
 
-.print-container {
-    position: relative; /* 페이지 번호 배치를 위한 기준점 */
-}
+.print-container { position: relative; /* 페이지 번호 배치를 위한 기준점 */}
 
-.print-top-margin {
-    height: 48px; /* 기존 .page에 주었던 상단 여백 48px과 동일하게 설정 */
-}
+.print-top-margin { height: 48px; /* 기존 .page에 주었던 상단 여백 48px과 동일하게 설정 */}
 
 /* 페이지 번호 스타일 */
-.print-page-number-wrap {
-    position: relative;
-    text-align: right;    /* 오른쪽 정렬 */
-    font-size: 12px;
-    font-weight: 400;
-    color: #666;
-    letter-spacing: -0.6px;
-    margin-bottom: -15px; /* 로고 레이아웃과 너무 떨어지지 않게 조정 */
-    top: 0;
-}
+.print-page-number-wrap { position: relative; text-align: right; /* 오른쪽 정렬 */
+ font-size: 12px; font-weight: 400; color: #666; letter-spacing: -0.6px; margin-bottom: -15px; /* 로고 레이아웃과 너무 떨어지지 않게 조정 */
+ top: 0; } 
 
 /* 현재 페이지 번호 자동 증가 */
-.current-page::before {
-    counter-increment: page_counter;
-    content: counter(page_counter);
-}
+.current-page::before { counter-increment: page_counter; content: counter(page_counter); } 
 
 /* 이미지 및 헤더 레이아웃 */
-.sinhan img {width: 120px;}
-.snuh img {width: 320px;}
-.jaeger img {width: 120px;}
-img {max-width: 100%; display: block;}
+.sinhan img { width: 120px; } 
+.snuh img { width: 320px; } 
+.jaeger img { width: 120px; } 
+img { max-width: 100%; display: block; } 
 
-.print__header {
-    display: flex; 
-    align-items: center; 
-    justify-content: space-between; 
-    margin-bottom: 40px; 
-    height: 72px;
-    position: relative;
-    z-index: 1;
-}
+.print__header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; height: 72px; position: relative; z-index: 1; } 
 
 /* 카드 및 정보 섹션 */
-.print__body .div-border-line2 {padding: 16px 20px; border: 1px solid var(--neutral-200); border-radius: 4px;}
-.print-card__body {
-    display: flex; 
-    align-items: center; 
-    gap: 24px; 
-    padding-bottom: 12px; 
-    margin-bottom: 12px; 
-    border-bottom: 1px solid var(--neutral-200);
-}
-.print-card__info {font-size: 18px; color: var(--neutral-900); font-weight: 700;}
+.print__body .div-border-line2 { padding: 16px 20px; border: 1px solid var(--neutral-200); border-radius: 4px; } 
+.print-card__body { display: flex; align-items: center; gap: 24px; padding-bottom: 12px; margin-bottom: 12px; border-bottom: 1px solid var(--neutral-200); } 
+.print-card__info { font-size: 18px; color: var(--neutral-900); font-weight: 700; } 
 
-.info-item__label, .info-item__value {font-size: 12px;}
-.info-item__label {width: 80px; font-weight: 600; color: var(--neutral-700);}
+.info-item__label, .info-item__value { font-size: 12px; } 
+.info-item__label { width: 80px; font-weight: 600; color: var(--neutral-700); } 
 
-.print-card__grid {
-    display: grid; 
-    grid-template-columns: repeat(2, 1fr);
-}
-.print-card__list .info-item {
-    display: flex; 
-    align-items: center; 
-    gap: 24px;
-}
-.print-card__list .info-item + .info-item {margin-top: 8px;}
-.print-card__list .info-item__value {font-weight: 700; color: var(--neutral-900);}
+.print-card__grid { display: grid; grid-template-columns: repeat(2, 1fr); } 
+.print-card__list .info-item { display: flex; align-items: center; gap: 24px; } 
+.print-card__list .info-item + .info-item { margin-top: 8px; } 
+.print-card__list .info-item__value { font-weight: 700; color: var(--neutral-900); } 
 
 /* 테이블 스타일 */
-.print-layout-table {
-    width: 100%;
-    border-collapse: collapse;
-    border: none;
-}
+.print-layout-table { width: 100%; border-collapse: collapse; border: none; } 
 
 .print-layout-table > thead > tr > td,
-.print-layout-table > tbody > tr > td {
-    padding: 0;
-    border: none;
-}
+.print-layout-table > tbody > tr > td { padding: 0; border: none; } 
 
-.print-table-wrap {
-    margin-top: 48px;
-    width: 100%;
-}
-.print-table-wrap + .print-table-wrap {margin-top: 48px;}
-.print-table-wrap table {width: 100%; border-collapse: collapse;}
-.print-table-wrap thead th, .print-table-wrap tbody td {padding: 6px 8px; text-align: center; line-height: 1.5;}
+.print-table-wrap { margin-top: 48px; width: 100%; } 
+.print-table-wrap + .print-table-wrap { margin-top: 48px; } 
+.print-table-wrap table { width: 100%; border-collapse: collapse; } 
+.print-table-wrap thead th, .print-table-wrap tbody td { padding: 6px 8px; text-align: center; line-height: 1.5; } 
 
-.print-table-wrap thead th {
-    background-color: var(--neutral-100); 
-    color: var(--neutral-900); 
-    font-size: 9px; 
-    font-weight: 700;
-}
-.print-table-wrap thead th:first-child { border-radius: 4px 0 0 4px;}
-.print-table-wrap thead th:last-child { border-radius: 0 4px 4px 0; }
+.print-table-wrap thead th { background-color: var(--neutral-100); color: var(--neutral-900); font-size: 9px; font-weight: 700; } 
+.print-table-wrap thead th:first-child { border-radius: 4px 0 0 4px; } 
+.print-table-wrap thead th:last-child { border-radius: 0 4px 4px 0; } 
 
-.print-table-wrap tbody tr {border-bottom: 1px solid var(--neutral-200);}
-.print-table-wrap tbody td {color: var(--neutral-700); font-size: 10px;}
-.print-table-wrap tbody td.color-point {color: var(--point); font-weight: 600;}
-.print-table-wrap tbody td.color-red-50 {color: var(--red-50); font-weight: 600;}
+.print-table-wrap tbody tr { border-bottom: 1px solid var(--neutral-200); } 
+.print-table-wrap tbody td { color: var(--neutral-700); font-size: 10px; } 
+.print-table-wrap tbody td.color-point { color: var(--point); font-weight: 600; } 
+.print-table-wrap tbody td.color-red-50 { color: var(--red-50); font-weight: 600; } 
 
-.table__title {margin-bottom: 24px; font-size: 16px; color: var(--neutral-900); font-weight: 700;}
+.table__title {position: relative; margin-bottom: 24px; font-size: 16px; color: var(--neutral-900); font-weight: 700; } 
+.table__title > span {position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-size: 8px; line-height: 1.5; color: #999;}
 
 /* 본문 내의 일반 데이터 테이블의 헤더 반복을 방지 */
-.print-table-wrap table thead {
-    display: table-row-group !important; /* table-header-group 대신 row-group을 써서 반복을 막음 */
-}
+.print-table-wrap table thead { display: table-row-group !important; /* table-header-group 대신 row-group을 써서 반복을 막음 */}
 
 /* 대신 레이아웃용(로고) 테이블의 헤더는 반드시 반복되게 유지 */
-.print-layout-table > thead {
-    display: table-header-group !important;
-}
+.print-layout-table > thead { display: table-header-group !important; } 
 
-.chart_wrap {
-    width: 100%;
-    height: auto;
-    min-height: 250px;
-    margin: 0 auto;
-    position: relative;
-    /* 인쇄 시 차트가 너무 커서 잘리는 것 방지 */
-}
+.chart_wrap { width: 100%; height: auto; min-height: 250px; margin: 0 auto; position: relative; /* 인쇄 시 차트가 너무 커서 잘리는 것 방지 */}
 
 /* [프린트 전용 설정] : 불필요한 여백 제거 및 페이지 끊김 방지 */
-@media print {
-    @page {
-        size: A4;
-        margin: 0;
-    }
-    body { background-color: #fff; }
-    .page-break {
-        display: block;
-        page-break-before: always; /* 이 요소 앞에서 페이지를 나눔 */
-        height: 0;
-        margin: 0;
-        border: none;
-    }
-    .print-top-margin {
-        display: block;
-        height: 48px;
-    }
-    .page {
-        padding-top: 0;
-        margin: 0;
-        box-shadow: none;
-        width: 210mm;
-        height: 297mm;
-        page-break-after: always;
-    }
-    .print-page-number-wrap {
-        display: block;
-    }
-    .print-layout-table {
-        display: table;
-        width: 100%;
-        border-spacing: 0;
-    }
-    /* .print-layout-table > thead {display: table-header-group; } */
-    /* 인쇄 시 본문 테이블 헤더가 다음 장에 나타나지 않도록 강제 */
-    .print-table-wrap table thead {
-        display: table-row-group;
-    }
+@media print { @page { size: A4; margin: 0; } 
+ body { background-color: #fff; } 
+ .page-break { display: block; page-break-before: always; /* 이 요소 앞에서 페이지를 나눔 */
+ height: 0; margin: 0; border: none; } 
+ .print-top-margin { display: block; height: 48px; } 
+ .page { padding-top: 0; margin: 0; box-shadow: none; width: 210mm; height: 297mm; page-break-after: always; } 
+ .print-page-number-wrap { display: block; } 
+ .print-layout-table { display: table; width: 100%; border-spacing: 0; } 
+ /* .print-layout-table > thead { display: table-header-group; } */
+ /* 인쇄 시 본문 테이블 헤더가 다음 장에 나타나지 않도록 강제 */
+ .print-table-wrap table thead { display: table-row-group; } 
 
-    .print-layout-table thead {
-        display: table-header-group !important; /* 모든 페이지 상단 반복 강제 */
-    }
-    
-    /* 기존 header 마진 조정 (선택사항) */
-    .print__header {
-        margin-bottom: 20px; 
-    }
-    .print-table-wrap { page-break-inside: auto; }
-    tr { page-break-inside: avoid; page-break-after: auto; }
-    thead { display: table-header-group; }
+ .print-layout-table thead { display: table-header-group !important; /* 모든 페이지 상단 반복 강제 */}
+ 
+ /* 기존 header 마진 조정 (선택사항) */
+ .print__header { margin-bottom: 20px; } 
+ .print-table-wrap { page-break-inside: auto; } 
+ tr { page-break-inside: avoid; page-break-after: auto; } 
+ thead { display: table-header-group; } 
 
-    .chart_wrap {
-        width: 100% !important;
-        height: 250px !important; /* 고정 높이를 주어 영역 확보 */
-    }
-    
-    /* 차트 선명도 유지 */
-    canvas {
-        max-width: 100% !important;
-        height: auto !important;
-    }
-}
+ .chart_wrap { width: 100% !important; height: 250px !important; /* 고정 높이를 주어 영역 확보 */}
+ 
+ /* 차트 선명도 유지 */
+ canvas { max-width: 100% !important; height: auto !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; } 
+ }

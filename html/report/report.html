@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>신한메디칼</title>
     <link rel="stylesheet" href="../../resource/css/print.css">
-    <!-- <script type="module" src="../../resource/js/global.js"></script> -->
+    <script type="module" src="../../resource/js/global.js"></script>
 </head>
 <body>
     <div class="page">
@@ -179,10 +179,12 @@
                                 </div>
                 
                                 <div class="print-table-wrap">
-                                    <p class="table__title ta-c">FeNO Average Trend</p>
+                                    <p class="table__title ta-c">FeNO Average Trend
+                                        <span>NO value (ppb)</span>
+                                    </p>
                                     <!-- chart :: s -->
                                     <div class="chart_wrap">
-                                        <canvas id="customLineChart" width="600" height="250"></canvas>
+                                        <canvas id="fenoChart" width="600" height="250"></canvas>
                                     </div>
                                     <!-- chart :: e -->
                                 </div>
@@ -241,45 +243,5 @@
             </table>
         </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const ctx = document.getElementById("customLineChart").getContext("2d");
-
-            new Chart(ctx, {
-                type: "line",
-                data: {
-                    labels: ["2025-03", "2025-06", "2025-09", "2025-11"],
-                    datasets: [{
-                        label: "FeNO Average (ppb)",
-                        data: [46, 16, 24.5, 15.5],
-                        borderColor: "#007aff",
-                        backgroundColor: "rgba(0, 122, 255, 0.1)",
-                        borderWidth: 2,
-                        pointRadius: 4,
-                        fill: true,
-                        tension: 0.2,
-                    }],
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    animation: false, // 인쇄 시 필수
-                    devicePixelRatio: 2,
-                    plugins: {
-                        legend: { display: false },
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            suggestedMax: 60,
-                        },
-                    },
-                },
-            });
-        });
-    </script>
 </body>
 </html>

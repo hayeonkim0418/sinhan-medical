@@ -6,16 +6,18 @@ import { SelectEvent } from "./SelectEvent.js";
 import { SelectPerson } from "./SelectPerson.js";
 import { CountDown } from "./CountDown.js";
 import { initCustomChart } from "./initCustomChart.js";
-import { initCustomChartNoData } from "./initCustomChart_NoData.js";
+import { initCustomChartPrint } from "./initCustomChartPrint.js";
+import { Gsap } from "./Gsap.js";
 
-Header();
-ProgressBar();
-TableTextScroll();
-SelectEvent();
-SelectPerson();
-CountDown();
 window.addEventListener("DOMContentLoaded", () => {
+  Header();
+  ProgressBar();
+  TableTextScroll();
+  SelectEvent();
+  SelectPerson();
+  CountDown();
   Password();
   initCustomChart("customLineChart");
-  initCustomChartNoData("initCustomChartNoData");
+  initCustomChartPrint("customLineChartPrint");
+  Gsap();
 });
