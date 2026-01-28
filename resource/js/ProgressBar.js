@@ -4,7 +4,7 @@ export const ProgressBar = () => {
   const totalTime = 10; // 설정할 총 시간 (초)
   let timeLeft = totalTime;
 
-  const secondsElement = document.getElementById("seconds");
+  const secondsElement = document.querySelector(".seconds");
   const progressCircle = document.querySelector(".timer-progress");
   const radius = 45;
   const circumference = 2 * Math.PI * radius; // 원의 둘레: 약 282.7

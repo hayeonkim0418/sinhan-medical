@@ -3,7 +3,7 @@
 import "https://cdn.jsdelivr.net/npm/chart.js";
 
 export const initCustomChart = (canvasId) => {
-  const canvas = document.getElementById("customLineChart");
+  const canvas = document.querySelector(".customLineChart");
   if (!canvas) return;
   const ctx = canvas.getContext("2d");
 

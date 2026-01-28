@@ -3,7 +3,7 @@
 import "https://cdn.jsdelivr.net/npm/chart.js";
 
 export const initCustomChartPrint = (canvasId) => {
-  const canvas = document.getElementById("fenoChart");
+  const canvas = document.querySelector(".fenoChart");
   if (!canvas) return;
   const ctx = canvas.getContext("2d");
 
