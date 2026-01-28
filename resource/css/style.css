@@ -209,13 +209,13 @@ img {max-width: 100%;}
 .balloon-path {position: relative; /*min-width: 22.5rem;*/ /*min-width: 38.375rem;*/}
 .balloon {position: absolute; top: 50%;  left: 50%; transform: translate(-49%, -27%); min-width: 10rem; /*width: 100%;*/ transition: width 0.3s ease, transform 0.1s ease-out; z-index: 5;}
     .balloon img {display: block; width: auto; max-width: none; height: auto;}
-.ball img, .balloon img {animation: float 4s ease-in-out infinite;}
+.ball img, .balloon img {animation: float 5s ease-in-out infinite;}
 @keyframes float {
     0% {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-0.2rem); 
+        transform: translateY(-0.3rem); 
     }
     100% {
         transform: translateY(0);
