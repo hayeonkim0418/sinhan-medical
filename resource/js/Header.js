@@ -7,7 +7,6 @@ export const Header = () => {
   IncludeHTML("../component/header.html", ".header")
     .then(() => {
       HeaderClickEvent();
-      console.log("Header loaded");
     })
     .catch((error) => {
       console.error(error);

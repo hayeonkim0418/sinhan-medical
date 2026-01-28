@@ -22,47 +22,25 @@ export const Gsap = () => {
       ease: "power1.inOut",
     });
 
-    tl.to(
-      ".header",
-      {
-        y: -50,
-        opacity: 0,
-        duration: 0.8,
-        ease: "power1.inOut",
-      },
-      "-=1",
-    );
+    tl.to(".header", {
+      y: -50,
+      opacity: 0,
+      duration: 0.8,
+      ease: "power1.inOut",
+    });
 
     tl.to(
       ".login-side",
       {
         x: -500,
         opacity: 0,
-        duration: 2,
+        duration: 1.5,
         ease: "power1.inOut",
         onComplete: () => {
           console.log("애니메이션 종료");
         },
       },
-      "-=0.5",
+      "<",
     );
-    // .to(".login-side__header-title, .login-side__header .body2-regular, .login-side__img", {
-    //   // x: -50,
-    //   opacity: 0,
-    //   duration: 0.5,
-    //   ease: "power2.in",
-    //   onComplete: () => {
-    //     console.log("애니메이션 종료");
-    //   },
-    // });
-    //   .to(".login-side__img, .login-side", {
-    //     x: -50,
-    //     opacity: 0,
-    //     duration: 0.5,
-    //     ease: "power2.in",
-    //     onComplete: () => {
-    //       console.log("애니메이션 종료");
-    //     },
-    //   });
   });
 };
