@@ -41,20 +41,7 @@ i.ic-size120 {
 	width: 7.5rem;
 	height: 7.5rem;
 }
-/* @media screen and (max-width: 800px) {
-	i.ic-size16 {
-		width: 0.8125rem;
-		height: 0.8125rem;
-	}
-	i.ic-size20 {
-		width: 1rem;
-		height: 1rem;
-	}
-	i.ic-size24 {
-		width: 1.25rem;
-		height: 1.25rem;
-	}
-} */
+
 .ic-logo {
 	-webkit-mask: url("../../resource/images/icon/ic-logo.svg");
 	mask: url("../../resource/images/icon/ic-logo.svg");
@@ -98,38 +85,6 @@ i.ic-size120 {
 .ic-clock {
 	-webkit-mask: url("../../resource/images/icon/ic-clock.svg");
 	mask: url("../../resource/images/icon/ic-clock.svg");
-}
-.ic-temperature {
-	-webkit-mask: url("../../resource/images/icon/ic-temperature.svg");
-	mask: url("../../resource/images/icon/ic-temperature.svg");
-}
-.ic-humidity {
-	-webkit-mask: url("../../resource/images/icon/ic-humidity.svg");
-	mask: url("../../resource/images/icon/ic-humidity.svg");
-}
-.ic-device-alert {
-	-webkit-mask: url("../../resource/images/icon/ic-device-alert.svg");
-	mask: url("../../resource/images/icon/ic-device-alert.svg");
-}
-.ic-sensor-alert {
-	-webkit-mask: url("../../resource/images/icon/ic-sensor-alert.svg");
-	mask: url("../../resource/images/icon/ic-sensor-alert.svg");
-}
-.ic-sensor {
-	-webkit-mask: url("../../resource/images/icon/ic-sensor.svg");
-	mask: url("../../resource/images/icon/ic-sensor.svg");
-}
-.ic-sensor-battery {
-	-webkit-mask: url("../../resource/images/icon/ic-sensor-battery.svg");
-	mask: url("../../resource/images/icon/ic-sensor-battery.svg");
-}
-.ic-battery_charging {
-	-webkit-mask: url("../../resource/images/icon/ic-battery_charging.svg");
-	mask: url("../../resource/images/icon/ic-battery_charging.svg");
-}
-.ic-battery_error {
-	-webkit-mask: url("../../resource/images/icon/ic-battery_error.svg");
-	mask: url("../../resource/images/icon/ic-battery_error.svg");
 }
 .ic-logout {
 	-webkit-mask: url("../../resource/images/icon/ic-logout.svg");
@@ -182,21 +137,9 @@ i.ic-size120 {
 	-webkit-mask: url("../../resource/images/icon/ic-password.svg");
 	mask: url("../../resource/images/icon/ic-password.svg");
 }
-.ic-password2 {
-	-webkit-mask: url("../../resource/images/icon/ic-password2.svg");
-	mask: url("../../resource/images/icon/ic-password2.svg");
-}
 .ic-date {
 	-webkit-mask: url("../../resource/images/icon/ic-date.svg");
 	mask: url("../../resource/images/icon/ic-date.svg");
-}
-.ic-day {
-	-webkit-mask: url("../../resource/images/icon/ic-day.svg");
-	mask: url("../../resource/images/icon/ic-day.svg");
-}
-.ic-day_iso {
-	-webkit-mask: url("../../resource/images/icon/ic-day_iso.svg");
-	mask: url("../../resource/images/icon/ic-day_iso.svg");
 }
 .ic-close {
 	-webkit-mask: url("../../resource/images/icon/ic-close.svg");
@@ -210,33 +153,9 @@ i.ic-size120 {
 	-webkit-mask: url("../../resource/images/icon/ic-eye-off.svg");
 	mask: url("../../resource/images/icon/ic-eye-off.svg");
 }
-.ic-language1 {
-	-webkit-mask: url("../../resource/images/icon/ic-language1.svg");
-	mask: url("../../resource/images/icon/ic-language1.svg");
-}
-.ic-language2 {
-	-webkit-mask: url("../../resource/images/icon/ic-language2.svg");
-	mask: url("../../resource/images/icon/ic-language2.svg");
-}
 .ic-manager {
 	-webkit-mask: url("../../resource/images/icon/ic-manager.svg");
 	mask: url("../../resource/images/icon/ic-manager.svg");
-}
-.ic-paly {
-	-webkit-mask: url("../../resource/images/icon/ic-paly.svg");
-	mask: url("../../resource/images/icon/ic-paly.svg");
-}
-.ic-network {
-	-webkit-mask: url("../../resource/images/icon/ic-network.svg");
-	mask: url("../../resource/images/icon/ic-network.svg");
-}
-.ic-network-off {
-	-webkit-mask: url("../../resource/images/icon/ic-network-off.svg");
-	mask: url("../../resource/images/icon/ic-network-off.svg");
-}
-.ic-network-on {
-	-webkit-mask: url("../../resource/images/icon/ic-network-on.svg");
-	mask: url("../../resource/images/icon/ic-network-on.svg");
 }
 
 .ic-adult, .ic-children {height: 3.5rem; background-color: var(--point) !important;} 
