@@ -1,3 +1,5 @@
+// 측정 화면 오른쪽 상단 잔여시간 타이머
+
 export const ProgressBar = () => {
   const totalTime = 10; // 설정할 총 시간 (초)
   let timeLeft = totalTime;

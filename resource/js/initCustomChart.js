@@ -1,3 +1,5 @@
+// 환자테이터 자세히 보기 - 차트 그래프
+
 import "https://cdn.jsdelivr.net/npm/chart.js";
 
 export const initCustomChart = (canvasId) => {

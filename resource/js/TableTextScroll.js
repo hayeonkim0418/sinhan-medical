@@ -1,3 +1,5 @@
+// 테이블 - 내용 길어지면 호버시 자동 스크롤
+
 export const TableTextScroll = () => {
   const containers = document.querySelectorAll(".scroll-container");
 

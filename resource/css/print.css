@@ -1,6 +1,7 @@
-@import url("reset.css");@import url("common.css");
-/* 인쇄 시 강제로 페이지를 나누는 클래스 */
-.page-break { display: none; /* 화면에서는 보이지 않음 */}
+@import url("reset.css");
+@import url("common.css");
+
+.page-break { display: none;} /* 인쇄 시 강제로 페이지를 나누는 클래스 */
 
 /* [공통 스타일] : 화면과 프린트 모두에 적용 */
 body { -webkit-print-color-adjust: exact; print-color-adjust: exact; line-height: 1.5; margin: 0; padding: 0; background-color: #f5f5f5; counter-reset: page_counter; /* 전체 문서에 페이지 카운터 초기화 */}
@@ -14,9 +15,7 @@ body { -webkit-print-color-adjust: exact; print-color-adjust: exact; line-height
 .print-top-margin { height: 48px; /* 기존 .page에 주었던 상단 여백 48px과 동일하게 설정 */}
 
 /* 페이지 번호 스타일 */
-.print-page-number-wrap { position: relative; text-align: right; /* 오른쪽 정렬 */
- font-size: 12px; font-weight: 400; color: #666; letter-spacing: -0.6px; margin-bottom: -15px; /* 로고 레이아웃과 너무 떨어지지 않게 조정 */
- top: 0; } 
+.print-page-number-wrap { position: relative; top: 0; right: -45px; text-align: right; font-size: 12px; font-weight: 400; color: #666; letter-spacing: -0.6px; } 
 
 /* 현재 페이지 번호 자동 증가 */
 .current-page::before { counter-increment: page_counter; content: counter(page_counter); } 
@@ -53,7 +52,7 @@ img { max-width: 100%; display: block; }
 .print-table-wrap table { width: 100%; border-collapse: collapse; } 
 .print-table-wrap thead th, .print-table-wrap tbody td { padding: 6px 8px; text-align: center; line-height: 1.5; } 
 
-.print-table-wrap thead th { background-color: var(--neutral-100); color: var(--neutral-900); font-size: 9px; font-weight: 700; } 
+.print-table-wrap thead th { background-color: var(--neutral-100); color: var(--neutral-800); font-size: 9px; font-weight: 700; } 
 .print-table-wrap thead th:first-child { border-radius: 4px 0 0 4px; } 
 .print-table-wrap thead th:last-child { border-radius: 0 4px 4px 0; } 
 
@@ -62,13 +61,13 @@ img { max-width: 100%; display: block; }
 .print-table-wrap tbody td.color-point { color: var(--point); font-weight: 600; } 
 .print-table-wrap tbody td.color-red-50 { color: var(--red-50); font-weight: 600; } 
 
-.table__title {position: relative; margin-bottom: 24px; font-size: 16px; color: var(--neutral-900); font-weight: 700; } 
+.table__title {position: relative; margin-bottom: 24px; font-size: 16px; color: var(--neutral-900); font-weight: 700; line-height: 1.5;} 
 .table__title > span {position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-size: 8px; line-height: 1.5; color: #999;}
 
 /* 본문 내의 일반 데이터 테이블의 헤더 반복을 방지 */
 .print-table-wrap table thead { display: table-row-group !important; /* table-header-group 대신 row-group을 써서 반복을 막음 */}
 
-/* 대신 레이아웃용(로고) 테이블의 헤더는 반드시 반복되게 유지 */
+/* 레이아웃용(로고) 테이블의 헤더는 반드시 반복되게 유지 */
 .print-layout-table > thead { display: table-header-group !important; } 
 
 .chart_wrap { width: 100%; height: auto; min-height: 250px; margin: 0 auto; position: relative; /* 인쇄 시 차트가 너무 커서 잘리는 것 방지 */}

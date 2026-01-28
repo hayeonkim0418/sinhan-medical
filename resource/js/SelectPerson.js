@@ -1,3 +1,5 @@
+// 성인 소아 선택 이벤트
+
 export const SelectPerson = () => {
   const personBtns = document.querySelectorAll(".select-person__btn");
 

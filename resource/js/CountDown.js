@@ -1,3 +1,5 @@
+// 로딩 애니메이션
+
 export const CountDown = () => {
   let count = 60;
   const CountDownNum = document.querySelector(".countdown__num");

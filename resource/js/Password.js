@@ -1,3 +1,5 @@
+// 패스워드 숫자 보여지고 안보여지고
+
 export const Password = () => {
   const passwordContainers = document.querySelectorAll(".input-container");
 

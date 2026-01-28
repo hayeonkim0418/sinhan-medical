@@ -1,3 +1,5 @@
+// 리포트 - 인쇄화면 차트 그래프
+
 import "https://cdn.jsdelivr.net/npm/chart.js";
 
 export const initCustomChartPrint = (canvasId) => {
@@ -5,13 +7,45 @@ export const initCustomChartPrint = (canvasId) => {
   if (!canvas) return;
   const ctx = canvas.getContext("2d");
 
+  // 배경 수평선 플러그인: 0 라인만 실선으로 그리기
+  const backgroundFixPlugin = {
+    id: "backgroundFix",
+    beforeDraw: (chart) => {
+      const {
+        ctx,
+        chartArea,
+        scales: { y },
+      } = chart;
+      ctx.save();
+
+      y.ticks.forEach((tick, index) => {
+        const yPos = y.getPixelForTick(index);
+        ctx.beginPath();
+
+        ctx.lineWidth = 1;
+        ctx.strokeStyle = "#ddd";
+
+        if (tick.value === 0) {
+          ctx.setLineDash([]); // 0 라인 실선
+        } else {
+          ctx.setLineDash([3, 3]); // 나머지 점선
+        }
+
+        ctx.moveTo(chartArea.left, yPos);
+        ctx.lineTo(chartArea.right, yPos);
+        ctx.stroke();
+      });
+      ctx.restore();
+    },
+  };
+
   const data = {
     labels: ["6 Mar", "7 Jun", "6 Sep", "11 Nov"],
     datasets: [
       {
         label: "FeNO Average Trend",
-        data: [46, 16, 24, 16], // 이미지의 대략적인 수치
-        borderColor: "#007bff", // 밝은 파란색
+        data: [46, 16, 24, 16],
+        borderColor: "#007bff",
         backgroundColor: "#fff",
         borderWidth: 3,
         pointBackgroundColor: "#fff",
@@ -19,7 +53,7 @@ export const initCustomChartPrint = (canvasId) => {
         pointBorderWidth: 3,
         pointRadius: 4,
         pointHoverRadius: 4,
-        tension: 0, // 직선으로 연결
+        tension: 0,
         fill: false,
       },
     ],
@@ -28,23 +62,20 @@ export const initCustomChartPrint = (canvasId) => {
   const config = {
     type: "line",
     data: data,
+    plugins: [backgroundFixPlugin],
     options: {
       responsive: true,
+      maintainAspectRatio: false,
+      devicePixelRatio: 1,
       layout: {
         padding: { top: 0 },
       },
       plugins: {
-        legend: { display: false }, // 범례 숨김
-        // title: {
-        //   display: true,
-        //   text: "FeNO Average Trend",
-        //   font: { size: 22, weight: "bold" },
-        //   color: "#000",
-        //   padding: { bottom: 30 },
-        // },
+        legend: { display: false },
       },
       scales: {
         y: {
+          beginAtZero: true,
           min: 0,
           max: 50,
           ticks: {
@@ -53,16 +84,8 @@ export const initCustomChartPrint = (canvasId) => {
             color: "#4B4B4B",
             font: { size: 10 },
           },
+          grid: { display: false },
           border: { display: false },
-          grid: {
-            display: true,
-            color: "#ddd",
-            lineWidth: 1,
-            drawTicks: false,
-            tickBorderDash: [5, 5],
-            borderDash: [5, 5], // 점선 스타일
-            // drawBorder: false,
-          },
         },
         x: {
           grid: { display: false },
@@ -74,20 +97,6 @@ export const initCustomChartPrint = (canvasId) => {
         },
       },
     },
-    // 인쇄를 위한 플러그인 (배경색 유지)
-    plugins: [
-      {
-        id: "custom_canvas_background_color",
-        beforeDraw: (chart) => {
-          const { ctx, width, height } = chart;
-          ctx.save();
-          ctx.globalCompositeOperation = "destination-over"; // 그리드 뒤로 배경을 보냄
-          ctx.fillStyle = "white";
-          ctx.fillRect(0, 0, width, height);
-          ctx.restore();
-        },
-      },
-    ],
   };
 
   new Chart(ctx, config);

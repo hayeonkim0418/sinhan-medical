@@ -5,13 +5,12 @@
 @import url("common.css");
 @import url("icon.css");
 
-body, html {font-size: clamp(14px, 0.833vw, 30px);}
+body, html {font-size: clamp(14px, 0.833vw, 30px);} /* 폰트 사이즈 - 최저 기본 최대 */
 body {background-color: var(--bg1);}
 .wrap {position: relative; display: flex; height: 100vh; overflow: hidden;}
 
 /********************************* header *********************************/
 .header {flex-shrink: 0; display: flex; height: var(--side-height); min-height: var(--side-height); z-index: 100; background-color: var(--default-white); border-bottom: 1px solid var(--default-black);
-    /* &.main-header {display: flex;} */
     .header-inner {flex: 1; display: flex; align-items: center; justify-content: space-between; padding: .625rem 1.5rem; width: 100%;}
     .datetime-wrapper {display: flex; align-items: center; gap: 1rem;}
     .datetime-wrapper {
@@ -47,7 +46,6 @@ img {max-width: 100%;}
 /* left-gnb */
 .side-bar {display: flex; flex-direction: column; width: var(--side-width); flex-shrink: 0; border-right: 1px solid var(--default-black); background-color: var(--default-white);
     .logo {display: flex; align-items: center; justify-content: center; width: var(--side-width); min-width: var(--side-width); height: var(--side-height); min-height: var(--side-height); background-color: var(--bg2); text-align: center; border-right: 1px solid var(--default-black);}
-    /* .ic-logo {display: block; width: 10.625rem; height: 1.4375rem; background-color: var(--default-white);} */
     .left-gnb {flex: 1; overflow-y: auto;
         li {border-bottom: 1px solid var(--neutral-300);}
         a {display: flex; align-items: center; gap: 1rem; padding: 1rem 1.5rem; font-size: var(--font-body3-size); color: var(--neutral-900);
@@ -93,17 +91,15 @@ img {max-width: 100%;}
     }
     span {display: inline-flex; align-items: center; justify-content: center; width: 1rem; height: 1rem;  border-radius: 50%;}
 }
+.login-input-box__btn {transition: all 0.2s ease-in-out;
+    &:hover {background-color: var(--point); border: 1px solid var(--point); }
+}
 .search-wrap input {min-width: 25rem;}
 
 /* rock */
 .rock-wrap {height: 100%;}
 .login-rock {display: flex; flex-direction: column;  align-items: center;  
-    .login-rock__img {display: block;
-            margin: 0 auto;
-            width: 12.5625rem;
-            height: 10.125rem;
-            background: url('../../resource/images/common/rock-img.svg') no-repeat center / contain;}  
-    /* .rock-img {display: block; margin: 0 auto; width: 12.5625rem; height: 10.125rem;} */
+    .login-rock__img {display: block; margin: 0 auto; width: 12.5625rem; height: 10.125rem; background: url('../../resource/images/common/rock-img.svg') no-repeat center / contain;} 
     .login-rock__desc {margin: 3rem 0; text-align: center; }
     .btn {display: inline-flex; align-items: center; justify-content: center; width: auto;}
 }
