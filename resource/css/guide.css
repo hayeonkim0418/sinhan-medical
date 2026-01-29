@@ -6,8 +6,8 @@ html, body {background-color: var(--default-white);}
 .guide-wrap {margin: 0 auto 4rem auto; max-width: 1600px; padding: 0 20px;}
 .guide-link {display: block; text-align: right; font-size: 23px; text-decoration: underline;}
 
-.module {position: relative; padding: 5% 0;}
-.page-title {padding-bottom: 50px; font-size: 70px;}
+.module {position: relative; padding: 5%;}
+.page-title {padding: 50px 0; font-size: 70px;}
 .module__heading {padding-bottom: 2px; margin-bottom: 38px; font-size: 40px; border-bottom: 3px solid #121212; line-height: 1.5;}
 .module__subheading {margin: 25.6px 0 12.8px; font-size: 30px;}
 .table th, .table td {padding: 20px 8px; border: 1px solid var(--neutral-200);}
