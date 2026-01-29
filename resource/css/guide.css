@@ -1,14 +1,10 @@
 @charset "UTF-8";
-/* @import url("fonts.css"); */
-/* @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"); */
-/* @import url("reset.css"); */
-/* @import url("common.css"); */
-/* @import url("icon.css"); */
 @import url("style.css");
 
 /* guide */
 html, body {background-color: var(--default-white);}
 .guide-wrap {margin: 0 auto 4rem auto; max-width: 1600px; padding: 0 20px;}
+.guide-link {display: block; text-align: right; font-size: 23px; text-decoration: underline;}
 
 .module {position: relative; padding-bottom: 5%;}
 .page-title {padding-bottom: 50px; font-size: 70px;}
@@ -61,3 +57,5 @@ small {font-size: 80%;}
 
 .checkbox__label {justify-content: normal;}
 .checkbox, .radio {position: relative; display: -webkit-inline-box; display: -ms-inline-flexbox; display: inline-flex; margin-right: 1.5rem; white-space: normal; -webkit-box-sizing: border-box; box-sizing: border-box; word-break: keep-all; word-wrap: break-word;}
+
+.table-wrap__type2 table {width: auto;}
