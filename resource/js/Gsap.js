@@ -1,7 +1,7 @@
 // 로그인 홈 - 로그인 버튼 클릭 시 모션
 
 export const Gsap = () => {
-  const loginBtn = document.querySelector(".login-input-box__btn");
+  const loginBtn = document.querySelector(".contents__login .login-input-box__btn");
 
   if (!loginBtn) return;
 
