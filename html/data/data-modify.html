@@ -1,147 +1,144 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>신한메디칼</title>
-    <link rel="stylesheet" href="../../resource/css/style.css">
-    <script type="module" src="../../resource/js/global.js"></script>
-</head>
-<body>
-    <div class="wrap">
-        <!-- side left gnb :: s -->
-        <aside class="side-bar">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>신한메디칼</title>
+      <link rel="stylesheet" href="../../resource/css/style.css">
+      <script type="module" src="../../resource/js/global.js"></script>
+   </head>
+   <body>
+      <div class="wrap">
+         <!-- side left gnb :: s -->
+         <aside class="side-bar">
             <h1 class="logo">
-                <img src="../../resource/images/icon/ic-logo.svg" alt="vyntus feno">
-                <span class="a11y">vyntus feno</span>
+               <img src="../../resource/images/icon/ic-logo.svg" alt="vyntus feno">
+               <span class="a11y">vyntus feno</span>
             </h1>
             <nav class="left-gnb">
-              <ul>
-                <li>
-                  <a href="#_"><i class="ic-home ic-size32"></i>홈</a>
-                </li>
-                <li>
-                  <a href="#_"><i class="ic-demo ic-size32"></i>데모</a>
-                </li>
-                <li>
-                  <a href="#_" class="is-active"><i class="ic-data ic-size32"></i>환자 데이터</a>
-                </li>
-              </ul>
+               <ul>
+                  <li>
+                     <a href="#_"><i class="ic-home ic-size32"></i>홈</a>
+                  </li>
+                  <li>
+                     <a href="#_"><i class="ic-demo ic-size32"></i>데모</a>
+                  </li>
+                  <li>
+                     <a href="#_" class="is-active"><i class="ic-data ic-size32"></i>환자 데이터</a>
+                  </li>
+               </ul>
             </nav>
             <!-- side left gnb :: e -->
-        </aside>
-        <div class="container">
-            <header class="header"><!-- Include --></header>
+         </aside>
+         <div class="container">
+            <header class="header">
+               <!-- Include -->
+            </header>
             <!-- main :: s -->
             <main class="contents">
-                <div class="contents__inner">
-                    <section class="login">
-                        <div class="login-input-wrap enter-patient-wrap">
-                            <h1 class="login__title title4 ta-c">Enter Patient Data</h1>
-                            <form action="" class="login-input__form">
-                                <div class="login-input-box">
-                                    <p class="form-label">Patient ID <span class="sharp">*</span></p>
-                                    <label for="t1" class="a11y">Patient ID</label>
-                                    <div class="input-container">
-                                        <input type="text" id="t1" class="id" value="ABCD123">
+               <div class="contents__inner">
+                  <section class="login">
+                     <div class="login-input-wrap enter-patient-wrap">
+                        <h1 class="login__title title4 ta-c">Enter Patient Data</h1>
+                        <form action="" class="login-input__form">
+                           <div class="login-input-box">
+                              <p class="form-label">Patient ID <span class="sharp">*</span></p>
+                              <label for="t1" class="a11y">Patient ID</label>
+                              <div class="input-container">
+                                 <input type="text" id="t1" class="id" value="ABCD123">
+                              </div>
+                              <p class="login-input-box__desc noti login-noti body5-regular">
+                                 Patient ID can be up to 40 characters in English + numeric combination
+                              </p>
+                           </div>
+                           <div class="login-input-box">
+                              <p class="form-label">First Name</p>
+                              <label for="t2" class="a11y">First Name</label>
+                              <div class="input-container">
+                                 <input type="text" id="t2" class="text-form" value="길동">
+                              </div>
+                           </div>
+                           <div class="login-input-box">
+                              <p class="form-label">Last Name (Family Name)</p>
+                              <label for="t3" class="a11y">Last Name (Family Name)</label>
+                              <div class="input-container">
+                                 <input type="text" id="t3" class="text-form" value="홍">
+                              </div>
+                           </div>
+                           <div class="login-input-box">
+                              <p class="form-label">Date of Birth</p>
+                              <label for="d1" class="a11y">Date of Birth</label>
+                              <div class="input-container">
+                                 <input type="date" id="d1" class="date" data-placeholder="yyyy-mm-dd" required>
+                              </div>
+                           </div>
+                           <div class="login-input-box">
+                              <p class="form-label p-b-16">Gender</p>
+                              <div class="input-container">
+                                 <span class="checkbox">
+                                 <input type="radio" class="radio__input" id="r1" name="radio" checked>
+                                 <label for="r1" class="radio__label">
+                                 <span class="radio__text">Male</span>
+                                 </label>
+                                 </span>
+                                 <span class="checkbox">
+                                 <input type="radio" class="radio__input" id="r2" name="radio">
+                                 <label for="r2" class="radio__label">
+                                 <span class="radio__text">Female</span>
+                                 </label>
+                                 </span>
+                              </div>
+                           </div>
+                           <div class="login-input-box">
+                              <p class="form-label">진료의</p>
+                              <label for="t3" class="a11y">진료의</label>
+                              <div class="input-container">
+                                 <input type="text" id="t3" class="text-form" value="진료의">
+                              </div>
+                           </div>
+                           <div class="login-input-box">
+                              <p class="form-label">진료과</p>
+                              <div class="select-box">
+                                 <div class="selected">
+                                    <div class="selected__value">선택해주세요</div>
+                                    <div class="arrow-dropdow">
+                                       <i class="ic-dropdown ic-size12"></i>
                                     </div>
-                                    <p class="login-input-box__desc noti login-noti body5-regular">
-                                        Patient ID can be up to 40 characters in English + numeric combination
-                                    </p>
-                                </div>
-
-                                <div class="login-input-box">
-                                    <p class="form-label">First Name</p>
-                                    <label for="t2" class="a11y">First Name</label>
-                                    <div class="input-container">
-                                        <input type="text" id="t2" class="text-form" value="길동">
-                                    </div>
-                                </div>
-                                <div class="login-input-box">
-                                    <p class="form-label">Last Name (Family Name)</p>
-                                    <label for="t3" class="a11y">Last Name (Family Name)</label>
-                                    <div class="input-container">
-                                        <input type="text" id="t3" class="text-form" value="홍">
-                                    </div>
-                                </div>
-
-                                <div class="login-input-box">
-                                    <p class="form-label">Date of Birth</p>
-                                    <label for="d1" class="a11y">Date of Birth</label>
-                                    <div class="input-container">
-                                        <input type="date" id="d1" class="date" data-placeholder="yyyy-mm-dd" required>
-                                    </div>
-                                </div>
-
-                                <div class="login-input-box">
-                                    <p class="form-label p-b-16">Gender</p>
-                                        <div class="input-container">
-                                            <span class="checkbox">
-                                                <input type="radio" class="radio__input" id="r1" name="radio" checked>
-                                                <label for="r1" class="radio__label">
-                                                    <span class="radio__text">Male</span>
-                                                </label>
-                                            </span>
-                                            <span class="checkbox">
-                                                <input type="radio" class="radio__input" id="r2" name="radio">
-                                                <label for="r2" class="radio__label">
-                                                    <span class="radio__text">Female</span>
-                                                </label>
-                                            </span>
-                                        </div>
-                                </div>
-
-                                <div class="login-input-box">
-                                    <p class="form-label">진료의</p>
-                                    <label for="t3" class="a11y">진료의</label>
-                                    <div class="input-container">
-                                        <input type="text" id="t3" class="text-form" value="진료의">
-                                    </div>
-                                </div>
-                                <div class="login-input-box">
-                                    <p class="form-label">진료과</p>
-                                    <div class="select-box">
-                                        <div class="selected">
-                                            <div class="selected__value">선택해주세요</div>
-                                            <div class="arrow-dropdow">
-                                                <i class="ic-dropdown ic-size12"></i>
-                                            </div>
-                                        </div>
-                                        <ul class="option-list">
-                                            <li class="option">내과</li>
-                                            <li class="option">선택-2</li>
-                                            <li class="option">선택-3</li>
-                                            <li class="option">선택-4</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="login-input-box">
-                                    <p class="form-label">검사자</p>
-                                    <label for="t4" class="a11y">검사자</label>
-                                    <div class="input-container">
-                                        <input type="text" id="t4" class="text-form" value="박임병">
-                                    </div>
-                                </div>
-                                <div class="login-input-box">
-                                    <p class="form-label">기타</p>
-                                    <label for="t5" class="a11y">기타</label>
-                                    <div class="input-container">
-                                        <textarea name="" id="t5" class="text-form">30분전 식사</textarea>
-                                        <!-- <input type="textar" id="t5" class="text-form" placeholder="코멘트를 입력하세요."> -->
-                                    </div>
-                                </div>
-
-                                <div class="btn-wrap login-input-btn-group m-b-0">
-                                    <button type="button" class="btn btn-white">Go back</button>
-                                    <button type="button" class="btn btn-bg2">Edit</button>
-                                </div>
-                            </form>
-                        </div>
-                    </section>
-                </div>
+                                 </div>
+                                 <ul class="option-list">
+                                    <li class="option">내과</li>
+                                    <li class="option">선택-2</li>
+                                    <li class="option">선택-3</li>
+                                    <li class="option">선택-4</li>
+                                 </ul>
+                              </div>
+                           </div>
+                           <div class="login-input-box">
+                              <p class="form-label">검사자</p>
+                              <label for="t4" class="a11y">검사자</label>
+                              <div class="input-container">
+                                 <input type="text" id="t4" class="text-form" value="박임병">
+                              </div>
+                           </div>
+                           <div class="login-input-box">
+                              <p class="form-label">기타</p>
+                              <label for="t5" class="a11y">기타</label>
+                              <div class="input-container">
+                                 <textarea name="" id="t5" class="text-form">30분전 식사</textarea>
+                                 <!-- <input type="textar" id="t5" class="text-form" placeholder="코멘트를 입력하세요."> -->
+                              </div>
+                           </div>
+                           <div class="btn-wrap login-input-btn-group m-b-0">
+                              <button type="button" class="btn btn-white">Go back</button>
+                              <button type="button" class="btn btn-bg2">Edit</button>
+                           </div>
+                        </form>
+                     </div>
+                  </section>
+               </div>
             </main>
             <!-- main :: e -->
-        </div>
-    </div>
-</body>
+         </div>
+      </div>
+   </body>
 </html>
