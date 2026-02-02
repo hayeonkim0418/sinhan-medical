@@ -158,8 +158,7 @@ img {max-width: 100%;}
         }
     }
 }
-/* 재실행 */
-/* 팝업 */
+
 /* 측정대기 */
 .measurement-section {display: block; /*align-items: center; flex-direction: column; justify-content: center;*/ margin-top: 4.8125rem; width: calc(100% - 15rem);}
 .measurement-inner {display: inline-flex; flex-direction: column; align-items: center;}
@@ -169,19 +168,20 @@ img {max-width: 100%;}
     span {color: var(--point);}
 }
 /* 중앙 측정 게이지 레이아웃 */
-.gauge-container {position: relative; display: inline-flex; align-items: center; gap: 10rem; height: 45.375rem; transition: all ease-in-out 0.5s;
+.gauge-container {position: relative; display: inline-flex; align-items: center; gap: 10rem; height: 100%; transition: all ease-in-out 0.5s;
     @media (max-width: 1600px) {gap: 5rem;}
 }
-.lines-column {display: flex; flex-direction: column; justify-content: space-between; height: 100%;
-    .lines-box {display: flex; flex-direction: column; gap: 6.25rem;}
-    .line {width: 9.125rem; height: .375rem; background-color: var(--neutral-500);
+.lines-column {display: flex; flex-direction: column; justify-content: space-between;
+    .lines-box {display: flex; flex-direction: column; gap: 91px;}
+    .line {width: 9.125rem; height: 6px; background-color: var(--neutral-500);
         &.blue {background-color: var(--point);}
         &.pink {background-color: var(--pink-50);}
     }
 }
-/* 공 움직임 설정 */
-.ball-path {position: relative; width: 10rem; height: 100%;}
-.ball {position: absolute; top: 45%; left: 50%; transform: translate(-50%, -50%); transition: transform 0.1s ease-out; width: 10rem; height: auto; text-align: center;}
+.ball-path, .lines-column {min-height: 726px; height: 45.375rem; max-height: 79.8vh;}
+/* 성인 공 */
+.ball-path {position: relative; width: 160px;}
+.ball {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); transition: transform 0.1s ease-out; width: 100%; height: auto;}
 .btn-start-box {position: relative; display: flex; align-items: center; flex-direction: column; gap: 2.5rem; margin-top: -7.125rem;
     &.ball-btn {justify-content: flex-end; min-height: 19.0625rem;}
     &.balloon-btn {margin-top: 0;}
@@ -190,12 +190,12 @@ img {max-width: 100%;}
     &:hover {background: url(../../resource/images/common/btn-start_hover.svg) no-repeat center/cover;}
 }
 
-/* 소아 */
+/* 소아 풍선 */
 .measurement-section__balloon {display: flex; flex-direction: column; align-items: center; margin-top: 10rem; 
     .measurement-inner {gap: 5.125rem;}
-    .gauge-container {position: relative; display: flex; justify-content: center; align-items: center; margin: 0 auto; width: 35rem; height: 35rem; aspect-ratio: 1 / 1; background: url(../../resource/images/common/balloon-blue_bg.svg) no-repeat center/contain;}
+    .gauge-container {position: relative; display: flex; justify-content: center; align-items: center; margin: 0 auto; width: 35rem; max-width: 35rem; height: 35rem; max-height: 35rem; aspect-ratio: 1 / 1; background: url(../../resource/images/common/balloon-blue_bg.svg) no-repeat center/contain;}
     &.wait {margin-top: 14.875rem;
-        .gauge-container {width: 22.5rem; height: 22.5rem;}
+        .gauge-container {min-width: 22.5rem; width: 22.5rem; min-height: 22.5rem; height: 22.5rem;}
         .balloon img {width: 10rem;}
     }
     &.fail-bg {
@@ -207,7 +207,7 @@ img {max-width: 100%;}
     }
 } 
 .balloon-path {position: relative; /*min-width: 22.5rem;*/ /*min-width: 38.375rem;*/}
-.balloon {position: absolute; top: 50%;  left: 50%; transform: translate(-49%, -27%); min-width: 10rem; /*width: 100%;*/ transition: width 0.3s ease, transform 0.1s ease-out; z-index: 5;}
+.balloon {position: absolute; top: 50%; left: 50%; transform: translate(-49%, -27%); max-width: 38.375rem; transition: width 0.3s ease, transform 0.1s ease-out; z-index: 5;}
     .balloon img {display: block; width: auto; max-width: none; height: auto;}
 .ball img, .balloon img {animation: float 5s ease-in-out infinite;}
 @keyframes float {

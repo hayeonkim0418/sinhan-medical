@@ -6,9 +6,7 @@
 /* [공통 스타일] : 화면과 프린트 모두에 적용 */
 body { -webkit-print-color-adjust: exact; print-color-adjust: exact; line-height: 1.5; margin: 0; padding: 0; background-color: #f5f5f5; counter-reset: page_counter; /* 전체 문서에 페이지 카운터 초기화 */}
 
-.page { width: 210mm; 
- min-height: 297mm; /* padding: 48px 77px; */
- padding: 0 77px 48px; margin: 20px auto; background-color: #fff; box-sizing: border-box; position: relative; box-shadow: 0 0 10px rgba(0,0,0,0.1); /* 스크린용 그림자 */}
+.page { width: 210mm; min-height: 297mm; padding: 0 77px 48px; margin: 20px auto; background-color: #fff; box-sizing: border-box; position: relative; box-shadow: 0 0 10px rgba(0,0,0,0.1);}
 
 .print-container { position: relative; /* 페이지 번호 배치를 위한 기준점 */}
 
