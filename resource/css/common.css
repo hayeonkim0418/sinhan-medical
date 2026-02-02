@@ -122,7 +122,7 @@
 
 /* button */
 .btn-wrap {display: flex; gap: .5rem; width: 100%;}
-.btn-wrap__type2 {display: flex; justify-content: flex-end; gap: 1rem; /*min-width: 12.5rem;*/
+.btn-wrap__type2 {display: flex; justify-content: flex-end; gap: 1rem; 
     .btn {display: flex; align-items: center; justify-content: center; gap: 0.5rem; width: 15rem;
         .ic-download {background-color: var(--bg2);}
     }
@@ -131,6 +131,7 @@
     &.position-r-b-24 {right: 1.5rem; bottom: 1.5rem;}
     a, button {display: flex; align-items: center; justify-content: center;}
 }
+.btn, .btn-bak {transition: all 0.2s ease-in-out;}
 .btn {flex: 1; display: inline-block; padding: 1rem 1.5rem; width: 100%;font-size: var(--font-body3-size); font-weight: 700; line-height: 1.5; border-radius: 8px; color: var(--default-white);
     &.btn-bg2 {background-color: var(--bg2); border: 1px solid var(--bg2);}
     &.btn-point {background-color: var(--point); border: 1px solid var(--point);}
@@ -146,10 +147,12 @@
         i {background-color: var(--default-white);}
     }
 }
+:not(.pop-up-wrapper) > .btn-white:hover {background-color: var(--bg4);}
+:not(.pop-up-wrapper) > .btn-bg2:hover {background-color: #003194; border: 1px solid #003194;}
 
 /* form */
 /* input select textrare */
-input, select {height: 3.6875rem;}
+input, select, .selected {height: 3.6875rem;}
 input, select, textarea {display: block; width: 100%; font-size: 1.125rem; font-weight: 400; color: var(--neutral-900); background-color: var(--default-white); border: 1px solid var(--neutral-300); border-radius: 8px; line-height: 1.5;}
 input:focus, select:focus, textarea:focus {border: 1px solid var(--point); outline: none;}
 input[type=text].id:focus {background: url(../../resource/images/icon/ic-id-focus.svg) no-repeat left 1.5rem top 50%; background-size: 1.5rem auto;}
@@ -175,8 +178,7 @@ input[type=date].date {
     &:valid {color: var(--neutral-900);}
 }
 .date::-webkit-datetime-edit {display: none; padding-left: 0;}
-.date:focus::-webkit-datetime-edit,
-.date:valid::-webkit-datetime-edit {display: inline-block;}
+.date:focus::-webkit-datetime-edit, .date:valid::-webkit-datetime-edit {display: inline-block;}
 input[type=date]::-webkit-calendar-picker-indicator {position: absolute; right: 1.5rem; top: 50%; transform: translateY(-50%); cursor: pointer; opacity: 1;}
 
 /* checkbox radio */
@@ -212,8 +214,11 @@ input[type=date]::-webkit-calendar-picker-indicator {position: absolute; right: 
             + .option {margin-top: .5rem;}
         }
     }
-    &.is-active .selected {border: 1px solid var(--point);}
-    &.is-active .option-list {display: block;}
+    &.is-active {
+        .selected {border: 1px solid var(--point);}
+        .option-list {display: block;}
+        .ic-dropdown {position: relative; transform: rotate(180deg);}
+    } 
 }
 
 /* table */

@@ -91,9 +91,9 @@ img {max-width: 100%;}
     }
     span {display: inline-flex; align-items: center; justify-content: center; width: 1rem; height: 1rem;  border-radius: 50%;}
 }
-.login-input-box__btn {transition: all 0.2s ease-in-out;
+/* .login-input-box__btn {transition: all 0.2s ease-in-out;
     &:hover {background-color: var(--point); border: 1px solid var(--point); }
-}
+} */
 .search-wrap input {min-width: 25rem;}
 
 /* rock */
