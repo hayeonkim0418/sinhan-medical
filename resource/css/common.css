@@ -147,8 +147,9 @@
         i {background-color: var(--default-white);}
     }
 }
-:not(.pop-up-wrapper) > .btn-white:hover {background-color: var(--bg4);}
-:not(.pop-up-wrapper) > .btn-bg2:hover {background-color: #003194; border: 1px solid #003194;}
+.btn-white:hover {background-color: var(--bg4);}
+.btn-bg2:hover {background-color: #003194; border: 1px solid #003194;}
+.pop-up-wrapper .btn-white:hover {background-color: var(--default-white); border: 1px solid var(--bg2); color: var(--bg2);}
 
 /* form */
 /* input select textrare */
