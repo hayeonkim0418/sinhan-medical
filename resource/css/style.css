@@ -242,14 +242,19 @@ img {max-width: 100%;}
     tbody td, tfoot th {line-height: 1.31;}
     tfoot tr {background-color: var(--bg1); border-top: 1px solid var(--neutral-300); border-bottom: 1px solid var(--neutral-300);} 
 }
-.result-card__ppb {position: relative; background-color: var(--bg4); border-radius: 8px;
+.result-card__ppb {position: relative; height: 100%; background-color: var(--bg4); border-radius: 8px; overflow: hidden;
     .result-card__ppb-data {display: flex; align-items: baseline; gap: 1rem; padding: 4.5rem 0 3.875rem 7rem;
         p, span {color: var(--point);}
         p {font-size: 15rem; font-weight: 600; line-height: 1.2;}
         span {font-size: 4.5rem; font-weight: 500;}
     } 
     .btn-bak {position: absolute; right: 1.5rem; top: 1.5rem;}
-    .result-img {margin-right: 6.875rem; text-align: right;}
+    .result-img {position: absolute; bottom: -2.8125rem; right: 6.875rem; 
+        @media (max-width: 1600px) {
+            right: 0;
+            img {max-width: 80%;}
+        }
+    }
 }
 
 /********************************* 02 demo 데모 *********************************/
