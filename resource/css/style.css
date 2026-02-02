@@ -294,7 +294,7 @@ img {max-width: 100%;}
 .info-card + .info-card, .result-card + .result-card {margin-top: 1.5rem;}
 .contents__body--left {
     .info-card {padding: 1.5rem 2rem;
-        .info-card__avatar {display: flex; gap: 1rem; margin-bottom: 1.5rem;}
+        .info-card__avatar {display: flex; gap: 1rem; margin-bottom: 1.5rem; width: 5rem; height: 5rem;}
         .info-item {
             + .info-item {margin-top: 1rem;}
             .info-item__label {margin-bottom: .25rem; font-size: var(--font-title6-size); font-weight: 700; line-height: 1.5; color: var(--neutral-700);}
