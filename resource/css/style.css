@@ -249,7 +249,7 @@ img {max-width: 100%;}
         span {font-size: 4.5rem; font-weight: 500;}
     } 
     .btn-bak {position: absolute; right: 1.5rem; top: 1.5rem;}
-    .result-img {position: absolute; bottom: -2.8125rem; right: 6.875rem; 
+    .result-img {position: absolute; bottom: -45px; right: 6.875rem; 
         @media (max-width: 1600px) {
             right: 0;
             img {max-width: 80%;}
