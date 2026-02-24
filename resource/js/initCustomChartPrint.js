@@ -81,8 +81,8 @@ export const initCustomChartPrint = (canvasId) => {
           ticks: {
             stepSize: 10,
             padding: 12,
-            color: "#4B4B4B",
-            font: { size: 10 },
+            color: "#121212",
+            font: { size: 12 },
           },
           grid: { display: false },
           border: { display: false },
@@ -92,7 +92,8 @@ export const initCustomChartPrint = (canvasId) => {
           border: { display: false },
           ticks: {
             padding: 8,
-            font: { size: 10 },
+            color: "#121212",
+            font: { size: 12 },
           },
         },
       },

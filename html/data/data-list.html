@@ -35,14 +35,14 @@
                <!-- Include -->
             </header>
             <!-- main :: s -->
-            <main class="contents">
+            <main class="contents overflow-y">
                <div class="contents__inner h-auto">
                   <!-- content top (title, button) :: s -->
-                  <section class="contents__top contents__header">
-                     <div class="btn-wrap__type2">
+                  <section class="contents__top contents__header flex-end">
+                     <!-- <div class="btn-wrap__type2">
                         <button type="button" class="btn btn-bg2" href="#_">New Patient<i class="ic-manager ic-size24 bg-default-white"></i>
                         </button>
-                     </div>
+                     </div> -->
                      <div class="search-wrap">
                         <label for="s1" class="a11y">search</label>
                         <div class="input-container">
@@ -54,7 +54,7 @@
                   <!-- content bottom (환자정보, 검사결과) :: s -->
                   <section class="contents__body">
                      <!-- 데이터 리스트 table :: s -->
-                     <div class="contents__body--right">
+                     <div class="contents__body--right dis-block">
                         <div class="table-wrap div-border-line">
                            <p class="data-list__total body3-regular">총 <span class="total-num body3-bold">999</span>건</p>
                            <div class="table-box table-box__data-list">
@@ -85,6 +85,14 @@
                                        <td>ABCD123</td>
                                        <td>홍길동</td>
                                        <td>2025-11-07</td>
+                                       <td class="color-yellow">40</td>
+                                       <td>male</td>
+                                       <td>10s</td>
+                                    </tr>
+                                    <tr>
+                                       <td>ABCD123</td>
+                                       <td>홍길동</td>
+                                       <td>2025-11-07</td>
                                        <td class="color-point">16</td>
                                        <td>male</td>
                                        <td>10s</td>
@@ -101,7 +109,7 @@
                                        <td>ABCD123</td>
                                        <td>홍길동</td>
                                        <td>2025-11-07</td>
-                                       <td class="color-point">24</td>
+                                       <td class="color-yellow">25.5</td>
                                        <td>male</td>
                                        <td>10s</td>
                                     </tr>
@@ -109,7 +117,7 @@
                                        <td>ABCD123</td>
                                        <td>홍길동</td>
                                        <td>2025-11-07</td>
-                                       <td class="color-point">24</td>
+                                       <td class="color-red-100">52</td>
                                        <td>male</td>
                                        <td>10s</td>
                                     </tr>
@@ -117,7 +125,7 @@
                                        <td>ABCD123</td>
                                        <td>홍길동</td>
                                        <td>2025-11-07</td>
-                                       <td class="color-point">24</td>
+                                       <td class="color-point">15.5</td>
                                        <td>male</td>
                                        <td>10s</td>
                                     </tr>
@@ -125,7 +133,7 @@
                                        <td>ABCD123</td>
                                        <td>홍길동</td>
                                        <td>2025-11-07</td>
-                                       <td class="color-point">48</td>
+                                       <td class="color-point">14.5</td>
                                        <td>male</td>
                                        <td>10s</td>
                                     </tr>
@@ -133,7 +141,7 @@
                                        <td>ABCD123</td>
                                        <td>홍길동</td>
                                        <td>2025-11-07</td>
-                                       <td class="color-point">48</td>
+                                       <td class="color-red-100">56</td>
                                        <td>male</td>
                                        <td>10s</td>
                                     </tr>
@@ -141,7 +149,15 @@
                                        <td>ABCD123</td>
                                        <td>홍길동</td>
                                        <td>2025-11-07</td>
-                                       <td class="color-point">48</td>
+                                       <td class="color-yellow">48</td>
+                                       <td>male</td>
+                                       <td>10s</td>
+                                    </tr>
+                                    <tr>
+                                       <td>ABCD123</td>
+                                       <td>홍길동</td>
+                                       <td>2025-11-07</td>
+                                       <td class="color-point">16</td>
                                        <td>male</td>
                                        <td>10s</td>
                                     </tr>
@@ -174,9 +190,9 @@
                   </section>
                   <!-- content bottom (환자정보, 검사결과) :: e -->
                   <!-- 하단 button :: s -->
-                  <div class="btn-wrap__type3 position-r-b-24">
+                  <!-- <div class="btn-wrap__type3 position-r-b-24">
                      <button class="btn-bak btn-bg2 sm" type="button"><i class="ic-manager ic-size24"></i><span class="a11y">새로운 환자</span></button>
-                  </div>
+                  </div> -->
                </div>
                <!-- 하단 button :: e -->
             </main>
